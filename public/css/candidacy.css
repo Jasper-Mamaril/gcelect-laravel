@@ -1,0 +1,196 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* overflow: auto; */
+}
+
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #1A3235;
+    --primary-color-light: #F6F5FF;
+    --secondary-color: #338D7A;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+/* for item area checking */
+.border1{
+    border: 2px solid red;
+}
+.border2{
+    border: 2px solid blue;
+}
+.border3{
+    border: 2px solid yellow;
+}
+/* end of item area checking */
+
+.flex{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2.5%; */
+}
+
+.flexColumn{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2.5%; */
+}
+
+.header{
+    /* border: 1px solid red; */
+    width: 100%;
+    margin: 10px  0;
+    background-color: var(--primary-color);
+    box-shadow: 2.5px 2.5px 5px gray;
+    /* height: calc(30% - 5%); */
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.second_header{
+    /* border: 1px solid red; */
+    /* width: 100%; */
+    margin: 10px  0;
+    background-color: var(--secondary-color);
+    box-shadow: 2.5px 2.5px 5px gray;
+    /* height: calc(50% - 5%); */
+    border-radius: 10px;
+    /* padding: 10px; */
+    color: white;
+}
+
+.content_row{
+    display: flex !important;
+}
+
+.rowone .welcome_text{
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+
+}
+
+.rowtwo{
+    display: flex;
+    height: 150px;
+}
+
+
+.rowthree {
+    display: flex;
+    height: 100px;
+}
+
+.home_content{
+    /* width: 100%; */
+    /* margin: 10px  0; */
+    /* padding: 10px; */
+    color: white;
+    gap: 2.5%;
+    flex-wrap: wrap;
+}
+
+.card{
+    box-shadow: 2.5px 2.5px 5px gray;
+    border-radius: 10px;
+    width: 200px;
+    height:200px;
+    margin: 10px  0;
+    flex-direction: column;
+    color: white;
+}
+
+.card_content{
+    width: 100%;
+    background-color: #338D7A;
+    height:80%;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.card_detail{
+    width: 100%;
+    height: 20%;
+    background-color: var(--primary-color);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.title{
+    /* border: 3px solid #1500ff; */
+    background-color: #1A3235;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+.title_txt{
+    font-size: 4rem;
+    color: #fff;
+    margin-top: .5rem;
+    margin-left: 1rem;
+}
+
+.form_area{
+        height: calc(100% - 5%);
+}
+
+/* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    opacity: 50%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
