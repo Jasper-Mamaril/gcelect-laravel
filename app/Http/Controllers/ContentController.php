@@ -20,7 +20,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-        $members = Members::all();
+        $members = Member::all();
         return view('components.voting');
         // return view('layout.master');
     }

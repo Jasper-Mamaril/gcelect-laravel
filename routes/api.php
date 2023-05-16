@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Course;
+
+use App\Models\Members;
+use App\Models\Users;
+use App\Models\Partylists;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -55,4 +59,43 @@ Route::delete('/course/{id}', function($id) {
     $course->delete();
 
     return $course;
+});
+
+Route::get('getAccounts', function() {
+    // select * from course
+    $users = Users::all();
+    // table('users')->where('name', 'John')
+    // $members = Member::where('members_position', "President")->get();
+    return $users;
+
+});
+
+Route::get('getPresident', function() {
+    // select * from course
+    // $members = Member::all();
+    // table('users')->where('name', 'John')
+    
+    // where('members_position', "President")->
+    // $members = Member::where('members_position', "President")->get();
+    $members = Members::with('members')-> where('members_position', "President")->get();
+    return $members;
+
+});
+
+Route::get('getVPinternal', function() {
+    // select * from course
+    // $members = Member::all();
+    // table('users')->where('name', 'John')
+    $members = Members::where('members_position', "VPinternal")->get();
+    return $members;
+
+});
+
+Route::get('getVPexternal', function() {
+    // select * from course
+    // $members = Member::all();
+    // table('users')->where('name', 'John')
+    $members = Members::where('members_position', "VPexternal")->get();
+    return $members;
+
 });

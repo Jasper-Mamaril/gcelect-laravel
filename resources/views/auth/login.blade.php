@@ -31,8 +31,8 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Password" />
                 </div>
-                    <button class="loginBtn" id="login-btn" href="./partylists.html">
-                        <a href="./partylists.html">Login</a>
+                    <button class="loginBtn" id="login-btn" href="#">
+                        <a href="#">Login</a>
                     </button>  
                 </div>
                 <p class="social-text">Don't have an account yet?</p>

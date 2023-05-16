@@ -29,3 +29,4 @@ Route::get('/', function () {
 Route::get('members', [App\Http\Controllers\ContentController::class, 'login']);
 
 Route::get('members', [App\Http\Controllers\ContentController::class, 'index']);
+
