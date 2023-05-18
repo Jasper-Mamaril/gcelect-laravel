@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Course;
-use App\Models\Content;
-use App\Models\Note;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +20,31 @@ Route::get('/', function () {
     // return view('auth.login');
 });
 
+// Route::get('/', function () {
+//     return view('components.voting');
+//     // return view('auth.login');
+// });
 
 
-Route::get('members', [App\Http\Controllers\ContentController::class, 'login']);
 
-Route::get('members', [App\Http\Controllers\ContentController::class, 'index']);
+// Route::get('members', [App\Http\Controllers\ContentController::class, 'login']);
+// Route::get('members', [App\Http\Controllers\MemberController::class, 'voting']);
 
+// Route for voting page 
+Route::get('partylists/all', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+
+Route::get('members/voting', [App\Http\Controllers\MemberController::class, 'getMembers']);
+
+// Route::get('members/president', [App\Http\Controllers\MemberController::class, 'getPresident']);
+// Route::get('members/VPint', [App\Http\Controllers\MemberController::class, 'getVPinternal']);
+// Route::get('members/VPext', [App\Http\Controllers\MemberController::class, 'getVPexternal']);
+// Route::get('members/secretary', [App\Http\Controllers\MemberController::class, 'getSecretary']);
+// Route::get('members/treasurer', [App\Http\Controllers\MemberController::class, 'getTreasurer']);
+// Route::get('members/auditor', [App\Http\Controllers\MemberController::class, 'getAuditor']);
+// Route::get('members/pio', [App\Http\Controllers\MemberController::class, 'getPio']);
+// Route::get('members/', [App\Http\Controllers\MemberController::class, 'voting']);
+
+// Route for candidacy application page
+Route::post('apply/', [App\Http\Controllers\PartylistController::class, 'applyPartylist']);
+
+Route::get('partylists/all', [App\Http\Controllers\PartylistController::class, 'getPartylists']);

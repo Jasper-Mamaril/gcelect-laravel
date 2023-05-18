@@ -14,7 +14,7 @@ class Partylists extends Model
 
     protected $fillable = ['partylists_name','partylist_logo'];
 
-    public function partylists(){
+    public function members(){
         return $this->hasMany(Members::class);
     }
 }

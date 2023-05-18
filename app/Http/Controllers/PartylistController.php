@@ -3,9 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Partylists;
 
 class PartylistController extends Controller
 {
+    public function getPartylists()
+    {
+        $partylists = Partylists::all();
+        // $members = Members::all();
+        return $partylists;
+
+    }
+
+    public function applyPartylist()
+    {
+    // $course->name = $request->name;
+    // $course->description = $request->description;
+    // $course->is_draft = $request->is_draft;
+    $partylist = new Partylists; 
+    $partylist->fill($request->all());
+    $partylist->save();
+
+    return $partylist;
+    }
+
     /**
      * Display a listing of the resource.
      *

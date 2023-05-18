@@ -14,7 +14,7 @@ class Members extends Model
 
     protected $fillable = ['members_fname','members_lname','members_position','members_picture'];
 
-    public function members(){
+    public function partylist(){
         return $this->belongsTo(Partylists::class);
     }
 

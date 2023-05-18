@@ -23,7 +23,7 @@
               </a>
           </li>
           <li class="nav-item" role="presentation">
-              <a class="nav-link text-white" id="profile-tab" data-toggle="modal" data-target="#exampleModalCenter" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+              <a class="nav-link text-white" id="profile-tab" data-toggle="modal" data-target="#exampleModalCenter" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="members/voting">
                   <i class='bx bx-upvote icon' ></i>    
                   <span>Voting</span>
               </a>

@@ -69,7 +69,11 @@
                 Voting
               </div>
 
-                @include('components.voting')
+                {{-- @include('components.voting') --}}
+                
+                  <div class="container">
+                    @yield('voting_content')
+                  </div>
 
             </div>
           {{-- End of Voting Tab --}}
