@@ -31,9 +31,9 @@ Route::get('/', function () {
 // Route::get('members', [App\Http\Controllers\MemberController::class, 'voting']);
 
 // Route for voting page 
-Route::get('partylists/all', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
 
-Route::get('candidate/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
+Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
 
 Route::get('members/president', [App\Http\Controllers\MemberController::class, 'getPresident']);
 // Route::get('members/VPint', [App\Http\Controllers\MemberController::class, 'getVPinternal']);

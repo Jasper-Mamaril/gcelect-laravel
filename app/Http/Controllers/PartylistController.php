@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Partylists;
+use App\Models\Candidates;
 
 class PartylistController extends Controller
 {
     public function getPartylists()
     {
+        // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all();
         // $members = Members::all();
-        return $partylists;
+        return view('partylists.partylists-home', compact('partylists'));
 
     }
 

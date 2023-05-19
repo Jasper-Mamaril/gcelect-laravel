@@ -24,7 +24,7 @@ class CandidateController extends Controller
         $bsemcs = Candidates::with('partylist')->where('position_id', 11)->get();
         $acts = Candidates::with('partylist')->where('position_id', 12)->get();
         // return $presidents;
-        return view('components.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
+        return view('candidates.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
 
     }
 
