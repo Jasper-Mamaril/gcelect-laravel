@@ -3,22 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Members;
+use App\Models\Candidates;
 use App\Models\Partylists;
 
-class MemberController extends Controller
+class CandidateController extends Controller
 {
-    public function getMembers()
+    public function getCandidates()
     {
         // $members = Members::all();
-        $presidents = Members::where('members_position', "President")->get();
-        $vpInternals = Members::where('members_position', "VPinternal")->get();
-        $vpExternals = Members::where('members_position', "VPexternal")->get();
-        $secretaries = Members::where('members_position', "Secretary")->get();
-        $treasurers = Members::where('members_position', "Treasurer")->get();
-        $auditors = Members::where('members_position', "Auditor")->get();
-        $pios = Members::where('members_position', "Pio")->get();
-        return view('components.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios'));
+        $presidents = Candidates::with('partylist')->where('position_id', 1)->get();
+        $vpInternals = Candidates::with('partylist')->where('position_id', 2)->get();
+        $vpExternals = Candidates::with('partylist')->where('position_id', 3)->get();
+        $secretaries = Candidates::with('partylist')->where('position_id', 4)->get();
+        $treasurers = Candidates::with('partylist')->where('position_id', 5)->get();
+        $auditors = Candidates::with('partylist')->where('position_id', 6)->get();
+        $pios = Candidates::with('partylist')->where('position_id', 7)->get();
+        $bms = Candidates::with('partylist')->where('position_id', 8)->get();
+        $bsits = Candidates::with('partylist')->where('position_id', 9)->get();
+        $bscss = Candidates::with('partylist')->where('position_id', 10)->get();
+        $bsemcs = Candidates::with('partylist')->where('position_id', 11)->get();
+        $acts = Candidates::with('partylist')->where('position_id', 12)->get();
+        // return $presidents;
+        return view('components.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
 
     }
 
@@ -157,3 +163,4 @@ class MemberController extends Controller
         //
     }
 }
+

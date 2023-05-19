@@ -18,9 +18,13 @@ class CreateCandidatesTable extends Migration
             $table->string('candidate_fname');
             $table->string('candidate_lname');
             $table->BigInteger('partylist_id')->unsigned();
+
             $table->foreign('partylist_id')->references('id')->on('partylists');
+
             $table->BigInteger('position_id')->unsigned();
+
             $table->foreign('position_id')->references('id')->on('positions');
+            
             $table->string('candidate_program');
             $table->string('candidate_yrlevel');
             $table->LongText('candidate_picture');

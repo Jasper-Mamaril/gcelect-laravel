@@ -16,9 +16,13 @@ class CreateVotesTable extends Migration
         Schema::create('votes', function (Blueprint $table) {
             $table->BigIncrements('id');
             $table->BigInteger('position_id')->unsigned();
+
             $table->foreign('position_id')->references('id')->on('positions');
+
             $table->BigInteger('candidate_id')->unsigned();
+
             $table->foreign('candidate_id')->references('id')->on('candidates');
+            
             $table->integer('vote_total');
             $table->timestamp('vote_verified_at')->nullable();
             $table->timestamps();
