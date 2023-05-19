@@ -35,6 +35,8 @@ Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistControll
 
 Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
 
+Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'getFiledCandidacy']);
+
 Route::get('leaderboards/voting-leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
 Route::get('members/president', [App\Http\Controllers\MemberController::class, 'getPresident']);

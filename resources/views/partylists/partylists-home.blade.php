@@ -59,24 +59,24 @@
             <table class="table table-dark table-striped rounded">
                   <tbody>
                     <thead>
-                        <th scope="row">Rank</th>
+                        <th scope="row"></th>
                         <th>Name</th>
-                        <th>Votes</th>
+                        <th>Position</th>
                     </thead>
                     <tr class="table-active">
                         <th scope="row">1</th>
                         <td>Larry the Bird</td>
-                        <td>14</td>
+                        <td>President</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Larry the Bird</td>
-                        <td>12</td>
+                        <td>Vice-president for External Affairs</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>Larry the Bird</td>
-                      <td>3</td>
+                      <td>Vice-president for Internal Affairs</td>
                     </tr>
                   </tbody>
             </table>

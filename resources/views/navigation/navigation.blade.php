@@ -17,7 +17,7 @@
 
     <ul class="nav nav-pills flex-column mb-auto p-2">
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white hover-zoom" href="/partylists/partylists-home">
+            <a class="nav-link text-white" href="/partylists/partylists-home">
                 <i class='bx bx-list-ul icon'></i>
                 <span>Partylists</span>
             </a>
@@ -35,7 +35,7 @@
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="candidacy.html">
+            <a class="nav-link text-white" href="/candidates/candidacy">
                 <i class='bx bx-id-card icon'></i>
                 <span>Candidacy</span>
             </a>

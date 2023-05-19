@@ -28,6 +28,13 @@ class CandidateController extends Controller
 
     }
 
+    public function getFiledCandidacy()
+    {
+        
+        return view('candidates.candidacy');
+
+    }
+
     public function getPresident()
     {
         $presidents = Members::with('partylists')->where('members_position', "President")->get();
