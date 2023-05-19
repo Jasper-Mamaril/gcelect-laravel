@@ -30,6 +30,8 @@
       @yield('content')
 
 </body>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="{{asset('js/leaderboards.js')}}"></script>
 <script src="./js/login.js"></script>
 
 </html>
