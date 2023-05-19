@@ -25,14 +25,15 @@
               <div class="d-flex flex-wrap gap-2 ">
 
                 @foreach ($partylists as $partylist)
+                {{$partylist->partylist_name}}
 
-                <div class="col p-3 rounded column" style="min-width: 250px; background-color: #1A3235;" data-bs-toggle="modal" data-bs-target="#partylistModal">
+                <div class="col p-3 rounded column" style="min-width: 300px; background-color: #1A3235;" data-bs-toggle="modal" data-bs-target="#partylistModal">
                   <div class="d-flex p-4 rounded-top text-dark justify-content-center" style="background-color: #fff; height:250px; ">
                     <img src="./img/logo.png">
                   </div>
-                  <div class=" p-3 rounded-bottom " style="background-color: gray;">
-                    {{-- Partylists Name --}}
-                    {{$partylist->partylist_name}}
+                  <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
+                    <div><h6>Partylist Name</h6></div>
+                    <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span></div>
                   </div>
                 </div>
 
