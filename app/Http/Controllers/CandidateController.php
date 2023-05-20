@@ -11,18 +11,43 @@ class CandidateController extends Controller
     public function getCandidates()
     {
         // $members = Members::all();
-        $presidents = Candidates::with('partylist')->where('position_id', 1)->get();
-        $vpInternals = Candidates::with('partylist')->where('position_id', 2)->get();
-        $vpExternals = Candidates::with('partylist')->where('position_id', 3)->get();
-        $secretaries = Candidates::with('partylist')->where('position_id', 4)->get();
-        $treasurers = Candidates::with('partylist')->where('position_id', 5)->get();
-        $auditors = Candidates::with('partylist')->where('position_id', 6)->get();
-        $pios = Candidates::with('partylist')->where('position_id', 7)->get();
-        $bms = Candidates::with('partylist')->where('position_id', 8)->get();
-        $bsits = Candidates::with('partylist')->where('position_id', 9)->get();
-        $bscss = Candidates::with('partylist')->where('position_id', 10)->get();
-        $bsemcs = Candidates::with('partylist')->where('position_id', 11)->get();
-        $acts = Candidates::with('partylist')->where('position_id', 12)->get();
+        // $presidents = Candidates::with('partylist')->where('position_id', 1)->get();
+        $presidents = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 1)->get();
+
+        $vpInternals = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 2)->get();
+
+        $vpExternals = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 3)->get();
+
+        $secretaries = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 4)->get();
+
+        $treasurers = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 5)->get();
+
+        $auditors = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 6)->get();
+
+        $pios = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 7)->get();
+
+        $bms = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 8)->get();
+
+        $bsits = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 9)->get();
+
+        $bscss = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 10)->get();
+
+        $bsemcs = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 11)->get();
+
+        $acts = Candidates::with(['partylist' => function ($query) {
+            $query->where('status', 'approved');}])->where('position_id', 12)->get();
+            
         // return $presidents;
         return view('candidates.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
 
