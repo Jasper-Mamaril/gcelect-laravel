@@ -1,5 +1,6 @@
 @extends('layout.master')
   @section('content')
+  @auth
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
     
 
@@ -109,4 +110,5 @@
 
         </main>
   </div>
+  @endauth
   @endsection

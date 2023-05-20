@@ -20,7 +20,10 @@
     <!-- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- <script src="js/leaderboards.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- <script src="js/leaderboards.js"></script> -->
+    <script src=""></script>
     
     
     <title>GC ELECT</title> 
@@ -34,6 +37,6 @@
 </body>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <script src="{{asset('js/leaderboards.js')}}"></script>
-<script src="./js/login.js"></script>
+<script src="{{asset('js/login.js')}}"></script>
 
 </html>

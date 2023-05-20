@@ -18,72 +18,72 @@ class UserSeeders extends Seeder
             [
                 'user_fname' => 'GCELECT',
                 'user_lname' => 'Admin',
-                'user_email' => 'admin.gcelect@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'admin.gcelect@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'admin'
             ],
 
             [
                 'user_fname' => 'Lou',
                 'user_lname' => 'Ballesteros',
-                'user_email' => 'lb@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'lb@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
             
             [
                 'user_fname' => 'Kim',
                 'user_lname' => 'Padua',
-                'user_email' => 'kp@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'kp@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 
             [
                 'user_fname' => 'Anthony',
                 'user_lname' => 'Mizal',
-                'user_email' => 'am@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'am@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
             
             [
                 'user_fname' => 'Jasper',
                 'user_lname' => 'Mamaril',
-                'user_email' => 'jm@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'jm@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 
             [
                 'user_fname' => 'Nathaniel',
                 'user_lname' => 'Ribada',
-                'user_email' => 'nr@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'nr@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 
             [
                 'user_fname' => 'Jmie',
                 'user_lname' => 'Bolate',
-                'user_email' => 'jb@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'jb@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 
             [
                 'user_fname' => 'Lovelyn',
                 'user_lname' => 'Perez',
-                'user_email' => 'lp@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'lp@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 
             [
                 'user_fname' => 'Raven',
                 'user_lname' => 'Cruz',
-                'user_email' => 'rc@gordoncollege.edu.ph',
-                'user_pword' => 'password123',
+                'email' => 'rc@gordoncollege.edu.ph',
+                'password' => 'password123',
                 'user_roles' => 'user'
             ],
 

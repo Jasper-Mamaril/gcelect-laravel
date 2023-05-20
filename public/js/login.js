@@ -12,12 +12,23 @@ function logout() {
         cancelButtonColor: '#F27171',
         background: '#0e2535',
         confirmButtonText: 'Yes'
-      }).then((result) => {
+      })
+      .then((result) => {
         if (result.isConfirmed) {
-            localStorage.clear();
-            window.location.href = "/index.html";
+          $.ajax({
+            type: "GET",
+            url: "/logout",
+            data: "data",
+            dataType: "dataType",
+            success: function (response) {
+              
+            }
+          });
   
+          location.reload();
+
         }
+        
       })
   
   }
