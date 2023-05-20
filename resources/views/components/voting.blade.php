@@ -44,7 +44,7 @@
 
       </div>
     </div>
-
+{{-- yes --}}
      <!-- Vice President External -->
      <div class="bg-light m-1 rounded p-2 text-dark  ">
       <div class="col p-2">Vice President for External Affairs: (Content goes here)</div>
