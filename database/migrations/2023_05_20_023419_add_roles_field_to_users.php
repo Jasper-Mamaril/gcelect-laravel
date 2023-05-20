@@ -15,6 +15,7 @@ class AddRolesFieldToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('user_roles')->default('user');
+            $table->string('user_status')->default('no');
         });
     }
 
