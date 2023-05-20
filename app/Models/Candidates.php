@@ -17,4 +17,8 @@ class Candidates extends Model
     public function partylist(){
         return $this->belongsTo(Partylists::class);
     }
+
+    public function vote(){
+        return $this->belongsTo(Vote::class);
+    }
 }

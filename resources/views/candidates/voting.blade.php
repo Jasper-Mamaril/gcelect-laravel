@@ -22,17 +22,9 @@
             </div>  -->
             <div class="bg-dark rounded">
               
-              <form action="#"  class="p-3">
-                <!-- Information -->
-                  {{-- <div class="row bg-light m-1 rounded p-2">
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
-                    </div>
-                  </div> --}}
-            
+              <form action="{{ route('submit-form') }}"  method="POST" class="p-3">
+                @csrf
+
                 <!-- President -->
                 <div class="bg-light m-1 rounded p-2 text-dark">
                   <div class="col p-2">President: (Content goes here)</div>
@@ -41,7 +33,7 @@
                     @foreach ($presidents as $president)
             
                       <div class="column">
-                        <input class="form-check-input" type="radio" name="president" id="idPresident" required>
+                        <input class="form-check-input" type="radio" name="president" id="idPresident" value="{{$president->id}}" required>
                         <label class="form-check-label" for="idPresident">
                           {{-- Name of Candidate  --}}
                           {{$president->candidate_fname}} {{$president->candidate_lname}} - "{{$president->partylist->partylist_name}} Partylist"
@@ -49,26 +41,7 @@
                       </div>
             
                     @endforeach
-                    
-            
-                    {{-- <div class="column">
-                      <input class="form-check-input" type="radio" name="president" id="idPresident" >
-                      <label class="form-check-label" for="idPresident">
-                        Name of  Second Candidate
-                      </label>
-                    </div>
-                    <div class="column">
-                      <input class="form-check-input" type="radio" name="president" id="idPresident" >
-                      <label class="form-check-label" for="idPresident">
-                        Name of  Third Candidate
-                      </label>
-                    </div>
-                    <div class="column">
-                      <input class="form-check-input" type="radio" name="president" id="idPresident" >
-                      <label class="form-check-label" for="idPresident">
-                        Name of Fourth Candidate 
-                      </label>
-                    </div> --}}
+                   
                   </div>
                 </div>
             
@@ -80,7 +53,7 @@
                     @foreach ($vpInternals as $vpInternal)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="vpInternal" id="idvpInternal" required>
+                      <input class="form-check-input" type="radio" name="vpInternal" id="idvpInternal" value="{{$vpInternal->id}}" required>
                       <label class="form-check-label" for="idvpInternal" >
                         {{-- Name of Candidate  --}}
                         {{$vpInternal->candidate_fname}} {{$vpInternal->candidate_lname}} - "{{$vpInternal->partylist->partylist_name}} Partylist"
@@ -100,7 +73,7 @@
                     @foreach ($vpExternals as $vpExternal)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="vpExternal" id="idvpExternal" required>
+                      <input class="form-check-input" type="radio" name="vpExternal" id="idvpExternal"  value="{{$vpExternal->id}}" required>
                       <label class="form-check-label" for="idvpExternal" >
                         {{-- Name of Candidate  --}}
                         {{$vpExternal->candidate_fname}} {{$vpExternal->candidate_lname}} - "{{$vpExternal->partylist->partylist_name}} Partylist"
@@ -109,24 +82,6 @@
             
                     @endforeach
             
-                    {{-- <div class="col ">
-                      <input class="form-check-input" type="radio" name="vicePresident" id="idVicePresident" required>
-                      <label class="form-check-label" for="idVicePresident" >
-                        Name of First Candidate
-                      </label>
-                    </div>
-                    <div class="col">
-                      <input class="form-check-input" type="radio" name="vicePresident" id="idVicePresident" >
-                      <label class="form-check-label" for="idVicePresident">
-                        Name of Second Candidate
-                      </label>
-                    </div>
-                    <div class="col">
-                      <input class="form-check-input" type="radio" name="vicePresident" id="idVicePresident" >
-                      <label class="form-check-label" for="idVicePresident">
-                        Name of  Third Candidate
-                      </label>
-                    </div> --}}
                   </div>
                 </div>
             
@@ -138,7 +93,7 @@
                     @foreach ($secretaries as $secretary)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="secretary" id="idSecretary" required>
+                      <input class="form-check-input" type="radio" name="secretary" id="idSecretary" value="{{$secretary->id}}" required>
                       <label class="form-check-label" for="idSecretary" >
                         {{-- Name of Candidate  --}}
                         {{$secretary->candidate_fname}} {{$secretary->candidate_lname}} - "{{$secretary->partylist->partylist_name}} Partylist"
@@ -158,7 +113,7 @@
                     @foreach ($treasurers as $treasurer)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="treasurer" id="idTreasurer" required>
+                      <input class="form-check-input" type="radio" name="treasurer" id="idTreasurer" value="{{$treasurer->id}}" required>
                       <label class="form-check-label" for="idTreasurer" >
                         {{-- Name of Candidate  --}}
                         {{$treasurer->candidate_fname}} {{$treasurer->candidate_lname}} - "{{$treasurer->partylist->partylist_name}} Partylist"
@@ -178,7 +133,7 @@
                     @foreach ($auditors as $auditor)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="auditor" id="idAuditor" required>
+                      <input class="form-check-input" type="radio" name="auditor" id="idAuditor" value="{{$auditor->id}}" value="{{$auditor->id}}" required>
                       <label class="form-check-label" for="idAuditor" >
                         {{-- Name of Candidate  --}}
                         {{$auditor->candidate_fname}} {{$auditor->candidate_lname}} - "{{$auditor->partylist->partylist_name}} Partylist"
@@ -198,7 +153,7 @@
                     @foreach ($pios as $pio)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="pio" id="idPio" required>
+                      <input class="form-check-input" type="radio" name="pio" id="idPio" value="{{$pio->id}}" required>
                       <label class="form-check-label" for="idPio" >
                         {{-- Name of Candidate  --}}
                         {{$pio->candidate_fname}} {{$pio->candidate_lname}} - "{{$pio->partylist->partylist_name}} Partylist"
@@ -218,7 +173,7 @@
                     @foreach ($bms as $bm)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="business_manager" id="idBusinessManager" required>
+                      <input class="form-check-input" type="radio" name="business_manager" id="idBusinessManager" value="{{$bm->id}}" required>
                       <label class="form-check-label" for="idBusinessManager" >
                         {{-- Name of Candidate  --}}
                         {{$bm->candidate_fname}} {{$bm->candidate_lname}} - "{{$bm->partylist->partylist_name}} Partylist"
@@ -238,7 +193,7 @@
                     @foreach ($bsits as $bsit)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="bsit" id="idBsit" required>
+                      <input class="form-check-input" type="radio" name="bsit" id="idBsit" value="{{$bsit->id}}" required>
                       <label class="form-check-label" for="idBsit" >
                         {{-- Name of Candidate  --}}
                         {{$bsit->candidate_fname}} {{$bsit->candidate_lname}} - "{{$bsit->partylist->partylist_name}} Partylist"
@@ -258,7 +213,7 @@
                     @foreach ($bscss as $bscs)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="bscs" id="idBscs" required>
+                      <input class="form-check-input" type="radio" name="bscs" id="idBscs" value="{{$bscs->id}}" required>
                       <label class="form-check-label" for="idBscs" >
                         {{-- Name of Candidate  --}}
                         {{$bscs->candidate_fname}} {{$bscs->candidate_lname}} - "{{$bscs->partylist->partylist_name}} Partylist"
@@ -278,7 +233,7 @@
                     @foreach ($bsemcs as $bsemc)
             
                     <div class="column">
-                      <input class="form-check-input" type="radio" name="bsemc" id="idBsemc" required>
+                      <input class="form-check-input" type="radio" name="bsemc" id="idBsemc" value="{{$bsemc->id}}" required>
                       <label class="form-check-label" for="idBsemc" >
                         {{-- Name of Candidate  --}}
                         {{$bsemc->candidate_fname}} {{$bsemc->candidate_lname}} - "{{$bsemc->partylist->partylist_name}} Partylist"
@@ -298,7 +253,7 @@
                       @foreach ($acts as $act)
               
                       <div class="column">
-                        <input class="form-check-input" type="radio" name="act" id="idAct" required>
+                        <input class="form-check-input" type="radio" name="act" id="idAct" value="{{$act->id}}" required>
                         <label class="form-check-label" for="idAct" >
                           {{-- Name of Candidate  --}}
                           {{$act->candidate_fname}} {{$act->candidate_lname}} - "{{$act->partylist->partylist_name}} Partylist"

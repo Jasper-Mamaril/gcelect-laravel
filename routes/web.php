@@ -32,6 +32,7 @@ Route::get('/', function () {
 
 // Route for voting page 
 Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
 
 Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
 

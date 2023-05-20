@@ -2,7 +2,6 @@
   @section('content')
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
     
-
         <main class="tab-content col-10 ms-auto flex-column bg-light h-auto min-vh-100">
           <!-- <div class="container-fluid text-white">
             afasfsdf
