@@ -9,7 +9,7 @@ class Votes extends Model
 {
     use HasFactory;
 
-    protected $table = 'positions';
+    protected $table = 'votes';
  
     protected $fillable = ['candidate_id'];
 

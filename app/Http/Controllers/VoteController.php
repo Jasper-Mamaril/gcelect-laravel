@@ -1,58 +1,68 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Votes;
 use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {   
-    public function insert(Request $request)
+    public function submitForm(Request $request)
     {
-        
-        $vote = new Vote;
-        $vote->candidate_id=$request->president;
+        // Retrieve the submitted form data
+        // $president = new Votes;
+        // $president = $request->input('president');
+        // $president->save();
+
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('president');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->vpInternal;
-        $vote->save();
-       
-        $vote = new Vote;
-        $vote->candidate_id=$request->vpExternal;
-        $vote->save();
-     
-        $vote = new Vote;
-        $vote->candidate_id=$request->secretary;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('vpInternal');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->treasurer;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('vpExternal');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->pio;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('secretary');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->business_manager;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('treasurer');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->bsit;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('auditor');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->bscs;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('pio');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->bsemc;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('business_manager');
         $vote->save();
 
-        $vote = new Vote;
-        $vote->candidate_id=$request->act;
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('bsit');
         $vote->save();
-        return view('candidates.voting');
+
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('bscs');
+        $vote->save();
+
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('bsemc');
+        $vote->save();
+
+        $vote = new Votes;
+        $vote->candidate_id=$request->input('act');
+        $vote->save();
+
+        return redirect('candidates/voting');
+
     }
     
     public function voting(Request $request)

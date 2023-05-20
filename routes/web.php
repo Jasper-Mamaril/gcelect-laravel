@@ -51,7 +51,7 @@ Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistControll
 
 Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
 
-
+Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
 
 
 Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'getFiledCandidacy']);
