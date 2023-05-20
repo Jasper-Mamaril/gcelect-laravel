@@ -35,7 +35,7 @@
                         <a href="#">Login</a>
                     </button>  
                 </div>
-                <p class="social-text">Don't have an account yet?</p>
+                <p class="social-text">Register for a Partylist Account Here!</p>
                     <button class="btn" id="sign-up-btn">
                         Sign up
                     </button>
@@ -51,28 +51,28 @@
                     </div>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Firstname" />
+                    <input type="text" placeholder="Partylist Name" required/>
                 </div>
-                <div class="input-field">
+                {{-- <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Lastname" />
-                </div>
+                    <input type="text" placeholder="Lastname" required value="partylistName"/>
+                </div> --}}
                     
-                <div class="input-field">
+                {{-- <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" />
-                </div>
+                </div> --}}
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Registrant Email" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Password" required/>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Confirm Password" />
+                    <input type="password" placeholder="Confirm Password" required/>
                 </div>
                     <button class="loginBtn" id="register-btn">
                         REGISTER
@@ -80,11 +80,12 @@
 
             </div>
                 
-                <p class="social-text">Already have an account?</p>
-                <button class="btn" id="sign-in-btn">
-                    Sign in
-                </button>
+                {{-- <p class="social-text">Back to Login</p> --}}
+                
           </form>
+          <span role="button" class="btn" id="sign-in-btn">
+            Back to Login
+        </span>
           
         </div>
       </div>

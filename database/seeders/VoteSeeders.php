@@ -14,6 +14,20 @@ class VoteSeeders extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('votes')->insert([
+            [
+                'candidate_id' => 1,
+            ],
+            [
+                'candidate_id' => 3,
+            ],
+            [
+                'candidate_id' => 4,
+            ],
+            [
+                'candidate_id' => 2,
+            ],
+
+        ]);
     }
 }

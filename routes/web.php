@@ -25,7 +25,23 @@ Route::get('/', function () {
 //     // return view('auth.login');
 // });
 
+Route::group(['namespace' => 'App\Http\Controllers'], function ()
+{
+    // Route::get('/login', 'LoginController@show')->name('login.show');
+    // Route::post('/login', 'LoginController@login')->name('login.perform');
+    // Route::get('/register', 'RegisterController@show')->name('register.show');
+    // Route::post('/register', 'RegisterController@register')->name('register.perform');
+    // Route::get('/login/admin', 'LoginController@showAdmin')->name('login.showAdmin');
 
+
+
+    // Route::get('/logout', 'LoginController@logout')->name('logout');
+
+    // Route::post('stories/comment', 'CommentController@store')->name('comment.add');
+    Route::post('vote/insert', 'VoteController@insert')->name('vote.insert');
+    Route::get('get/comment', 'CommentController@index')->name('comment.index');
+    // Route::get('favorites', 'FavoriteController@index')->name('favorite.index');
+});
 
 // Route::get('members', [App\Http\Controllers\ContentController::class, 'login']);
 // Route::get('members', [App\Http\Controllers\MemberController::class, 'voting']);
@@ -34,6 +50,9 @@ Route::get('/', function () {
 Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
 
 Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
+
+
+
 
 Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'getFiledCandidacy']);
 
