@@ -64,7 +64,7 @@
 
                 {{-- Vice President for External Affairs --}}
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Candidate for Vice-president in External Affairs:</div>
+                  <div class="col p-2">Candidate for Vice-president For External Affairs:</div>
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
