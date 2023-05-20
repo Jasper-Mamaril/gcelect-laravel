@@ -28,70 +28,7 @@ class CandidateController extends Controller
 
     }
 
-    public function getFiledCandidacy()
-    {
-        
-        return view('candidates.candidacy');
-
-    }
-
-    public function getPresident()
-    {
-        $presidents = Members::with('partylists')->where('members_position', "President")->get();
-        // $presidents = Members::all();
-        return $presidents;
-        // return view('components.voting', compact('presidents'));
-
-    }
-
-    public function getVPinternal()
-    {
-        $vpInternal = Members::where('members_position', "VPinternal")->get();
-        // $members = Members::all();
-        return $vpInternal;
-
-    }
-
-    public function getVPexternal()
-    {
-        $vpExternal = Members::where('members_position', "VPexternal")->get();
-        // $members = Members::all();
-        return $vpExternal;
-
-    }
-
-    public function getSecretary()
-    {
-        $secretary = Members::where('members_position', "Secretary")->get();
-        // $members = Members::all();
-        return $secretary;
-
-    }
-
-    public function getTreasurer()
-    {
-        $treasurer = Members::where('members_position', "Treasurer")->get();
-        // $members = Members::all();
-        return $treasurer;
-
-    }
-
-    public function getAuditor()
-    {
-        $auditor = Members::where('members_position', "Auditor")->get();
-        // $members = Members::all();
-        return $auditor;
-
-    }
-
-    public function getPio()
-    {
-        $pio = Members::where('members_position', "Pio")->get();
-        // $members = Members::all();
-        return $pio;
-
-    }
-
+    
 
 
     /**

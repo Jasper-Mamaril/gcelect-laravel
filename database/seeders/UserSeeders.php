@@ -16,10 +16,19 @@ class UserSeeders extends Seeder
     {
         DB::table('users')->insert([
             [
+                'user_fname' => 'GCELECT',
+                'user_lname' => 'Admin',
+                'user_email' => 'admin.gcelect@gordoncollege.edu.ph',
+                'user_pword' => 'password123',
+                'user_roles' => 'admin'
+            ],
+
+            [
                 'user_fname' => 'Lou',
                 'user_lname' => 'Ballesteros',
                 'user_email' => 'lb@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
             
             [
@@ -27,6 +36,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Padua',
                 'user_email' => 'kp@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
             [
@@ -34,6 +44,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Mizal',
                 'user_email' => 'am@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
             
             [
@@ -41,6 +52,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Mamaril',
                 'user_email' => 'jm@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
             [
@@ -48,6 +60,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Ribada',
                 'user_email' => 'nr@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
             [
@@ -55,6 +68,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Bolate',
                 'user_email' => 'jb@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
             [
@@ -62,6 +76,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Perez',
                 'user_email' => 'lp@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
             [
@@ -69,6 +84,7 @@ class UserSeeders extends Seeder
                 'user_lname' => 'Cruz',
                 'user_email' => 'rc@gordoncollege.edu.ph',
                 'user_pword' => 'password123',
+                'user_roles' => 'user'
             ],
 
         ]);

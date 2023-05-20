@@ -17,17 +17,15 @@ class CreateCandidatesTable extends Migration
             $table->BigIncrements('id');
             $table->string('candidate_fname');
             $table->string('candidate_lname');
-            $table->BigInteger('partylist_id')->unsigned();
-
-            $table->foreign('partylist_id')->references('id')->on('partylists');
-
             $table->BigInteger('position_id')->unsigned();
-
             $table->foreign('position_id')->references('id')->on('positions');
-            
+            // $table->BigInteger('partylist_id')->unsigned();
+            // $table->foreign('partylist_id')->references('id')->on('partylists');
+            $table->string('partylist_name');
+
             $table->string('candidate_program');
             $table->string('candidate_yrlevel');
-            $table->LongText('candidate_picture');
+            $table->LongText('candidate_picture')->nullable();
             $table->timestamp('candidate_verified_at')->nullable();
             $table->timestamps();
         });
