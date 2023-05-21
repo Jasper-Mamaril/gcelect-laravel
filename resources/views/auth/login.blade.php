@@ -80,8 +80,6 @@
 
             </div>
                 
-                {{-- <p class="social-text">Back to Login</p> --}}
-                
           </form>
           <span role="button" class="btn" id="sign-in-btn">
             Back to Login

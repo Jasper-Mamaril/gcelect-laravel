@@ -64,28 +64,7 @@ class VoteController extends Controller
         return redirect('candidates/voting');
 
     }
-    
-    public function voting(Request $request)
-    {
-        // Retrieve the selected radio button values
-        $president = $request->input('president');
-        $president->save();
-        // $vpInternal = $request->input('vpInternal');
-        // $vpExternal = $request->input('vpExternal');
-        // $secretary = $request->input('secretary');
-        // $treasurer = $request->input('treasurer');
-        // $auditor = $request->input('auditor');
-        // $pio = $request->input('pio');
-        // $businessManager = $request->input('business_manager');
-        // $bsit = $request->input('bsit');
-        // $bscs = $request->input('bscs');
-        // $bsemc = $request->input('bsemc');
-        // $act = $request->input('act');
-        dd($president);
-        // Process the selected values as needed
-        // Redirect or return a response
-        // return redirect()->back()->with('success', 'Voting submitted successfully');
-    }
+
 
 
     /**

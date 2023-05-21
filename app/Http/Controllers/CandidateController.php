@@ -10,8 +10,6 @@ class CandidateController extends Controller
 {
     public function getCandidates()
     {
-        // $members = Members::all();
-        // $presidents = Candidates::with('partylist')->where('position_id', 1)->get();
         $presidents = Candidates::with(['partylist' => function ($query) {
             $query->where('status', 'approved');}])->where('position_id', 1)->get();
 
@@ -48,12 +46,14 @@ class CandidateController extends Controller
         $acts = Candidates::with(['partylist' => function ($query) {
             $query->where('status', 'approved');}])->where('position_id', 12)->get();
             
-        // return $presidents;
         return view('candidates.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
 
     }
 
-    
+    public function route()
+    {
+        return view('candidates.candidacy');
+    }
 
 
     /**

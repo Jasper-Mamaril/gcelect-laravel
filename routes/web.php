@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
 
 
-    Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'getFiledCandidacy']);
+    Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'route']);
 
     Route::get('leaderboards/voting-leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 

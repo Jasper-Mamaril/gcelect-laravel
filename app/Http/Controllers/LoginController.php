@@ -27,7 +27,7 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-                return redirect()->intended('candidates/voting');
+                return redirect()->intended('partylists/partylists-home');
             
             // if(auth()->user()->role == 'Admin'){
             //     return redirect()->intended('admin/index');
