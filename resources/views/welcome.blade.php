@@ -39,7 +39,7 @@
                               Login
                           </button>  
                       </div>
-                      <p class="social-text">Register for a Partylist Account Here!</p>
+                      <p class="social-text">Register for an Account Here!</p>
                           {{-- <button class="btn" id="sign-up-btn">
                               Sign up
                           </button> --}}
@@ -59,19 +59,19 @@
                         </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Firstname" name="firstname" />
+                        <input type="text" placeholder="Firstname" name="firstname" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Lastname" name="lastname"/>
+                        <input type="text" placeholder="Lastname" name="lastname" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email"/>
+                        <input type="email" placeholder="Email" name="email" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password"/>
+                        <input type="password" placeholder="Password" name="password" required/>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
@@ -82,6 +82,7 @@
                         </button>  
     
                 </div>
+                <p class="social-text">Back to Login</p>
                     <button type="button" class="btn" id="sign-in-btn">
                     Sign In
                     </button>
@@ -97,7 +98,50 @@
                 <img src="./img/userLogin.png" class="image imgLogo" alt="" />
               </div>
               <div class="panel right-panel">
-                <img src="./img/signup.png" class="image imgLogo2" alt="" />
+                {{-- <img src="./img/signup.png" class="image imgLogo2" alt="" /> --}}
+                <!-- REGISTER FORM for candidate -->
+                    <div class="image imgLogo2">
+                        <h1>Register for a Partylist Account Here!</h1>
+
+                        <form action="{{route('registerPartylist.perform')}}" method="POST" class="sign-up-form">
+                            @csrf
+                            <div class="signup-form-container">
+                                <div class="logoTitle">
+                                    <img class="icon" src="./img/icon2.png"/>
+                                    <h1 class="title">GC ELECT</h1>
+                                </div>
+                                    {{-- <input type="text" placeholder="Firstname" name="firstname" value="partylist" required hidden/>
+                                    <input type="text" placeholder="Lastname" name="lastname" value="candidates" required hidden/> --}}
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Partylist Name" name="firstname" required/>
+                            </div>
+                                
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="lastname" required/>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="Email" name="email" required/>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" name="password" required/>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Confirm Password" name="checkPassword" required/>
+                            </div>
+                                <button class="loginBtn" id="register-btn" type="submit">
+                                    REGISTER
+                                </button>  
+            
+                        </div>
+        
+                        </form>
+                    </div>
+                
               </div>
             </div>
           </div>

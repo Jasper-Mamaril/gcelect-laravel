@@ -28,11 +28,13 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
                 return redirect()->intended('partylists/partylists-home');
-            
-            // if(auth()->user()->role == 'Admin'){
-            //     return redirect()->intended('admin/index');
+
+            // if(auth()->user()->role == 'admin'){
+            //     return redirect()->intended('admin/home');
+            // } if(auth()->user()->role == 'partylist'){
+            //     return redirect()->intended('partylist/candidacy-home');
             // } else {
-            //     return redirect()->intended('stories/index');
+            //     return redirect()->intended('partylists/partylists-home');
             // }
 
         }

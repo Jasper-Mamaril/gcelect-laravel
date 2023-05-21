@@ -84,6 +84,46 @@
           <span role="button" class="btn" id="sign-in-btn">
             Back to Login
         </span>
+
+                  <!-- REGISTER FORM for Partylist Account -->
+                  <form action="#" class="sign-up-form">
+                    <div class="signup-form-container">
+                            <div class="logoTitle">
+                                <img class="icon" src="./img/icon2.png"/>
+                                <h1 class="title">GC ELECT</h1>
+                            </div>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Partylist Name" required/>
+                        </div>
+                        {{-- <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Lastname" required value="partylistName"/>
+                        </div> --}}
+                            
+                        {{-- <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Username" />
+                        </div> --}}
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="Registrant Email" required/>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required/>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Confirm Password" required/>
+                        </div>
+                            <button class="loginBtn" id="register-btn">
+                                REGISTER
+                            </button>  
+        
+                    </div>
+                        
+                  </form>
           
         </div>
       </div>

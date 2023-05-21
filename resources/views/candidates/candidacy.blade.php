@@ -3,7 +3,6 @@
   @auth
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
     
-
         <main class="tab-content col-10 ms-auto flex-column bg-light h-auto min-vh-100">
           <!-- <div class="container-fluid text-white">
             afasfsdf
@@ -26,11 +25,11 @@
               
               <form action="#"  class="p-3">
                 <!-- Partylist -->
-                <div class="row bg-light m-1 rounded p-2">
+                {{-- <div class="row bg-light m-1 rounded p-2">
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Partylist" aria-label="First name" required>
+                    <input type="text" class="form-control" placeholder="Partylist name" aria-label="First name" required>
                   </div>
-                </div>
+                </div> --}}
 
                 {{-- President --}}
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
@@ -38,12 +37,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -52,6 +54,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -59,6 +62,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -69,12 +77,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -83,6 +94,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -90,6 +102,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -100,12 +117,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -114,6 +134,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -121,6 +142,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -131,12 +157,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -145,6 +174,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -152,6 +182,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -162,12 +197,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -176,6 +214,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -183,6 +222,10 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col-4">
+                      <label>Platform</label>
+                      <input type="text" class="form-control" placeholder="Platform" aria-label="Platform" required>
                     </div>
                   </div>
                 </div>
@@ -193,12 +236,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -207,6 +253,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -214,6 +261,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -224,12 +276,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -238,6 +293,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -245,6 +301,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -255,12 +316,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program</label>
                       <select class="form-select" aria-label="Default select example" required>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -269,6 +333,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -276,6 +341,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -286,12 +356,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program (locked)</label>
                       <select class="form-select" aria-label="Default select example" required disabled>
                         <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         {{-- <option value="BSCS">Bachelor of Science in Computer Science</option>
@@ -300,6 +373,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -307,6 +381,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -317,12 +396,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program (locked)</label>
                       <select class="form-select" aria-label="Default select example" required disabled>
                         {{-- <option value="BSIT" selected>Bachelor of Science in Information Technology</option> --}}
                         <option value="BSCS" selected>Bachelor of Science in Computer Science</option>
@@ -331,6 +413,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -339,36 +422,10 @@
                         <option value="4">Fourth-year</option>
                       </select>
                     </div>
-                  </div>
-                </div>
-
-                {{-- BSCS Representative --}}
-                <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Candidate for BSCS Representative:</div>
-                  <!-- Information -->
-                  <div class="row bg-light m-1 rounded p-1">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
-                    </div>
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
-                    </div>
-                    <div class="col-4">
-                      <select class="form-select" aria-label="Default select example" required disabled>
-                        {{-- <option value="BSIT" selected>Bachelor of Science in Information Technology</option> --}}
-                        <option value="BSCS" selected>Bachelor of Science in Computer Science</option>
-                        {{-- <option value="BSEMC">Bachelor of Science in Entertainment and Multi-media Computing</option>
-                        <option value="ACT">Associate in Computer Technology</option> --}}
-                      </select>
-                    </div>
-                    <div class="col-2">
-                      <select class="form-select" aria-label="Default select example" required>
-                        {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
-                      </select>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -379,12 +436,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program (locked)</label>
                       <select class="form-select" aria-label="Default select example" required disabled>
                         {{-- <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS" selected>Bachelor of Science in Computer Science</option> --}}
@@ -393,6 +453,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -400,6 +461,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -411,12 +477,15 @@
                   <!-- Information -->
                   <div class="row bg-light m-1 rounded p-1">
                     <div class="col-3">
+                      <label>First Name</label>
                       <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-3">
+                      <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name: e.x.(Dela Cruz)" aria-label="Last name" required>
                     </div>
                     <div class="col-4">
+                      <label>Program (locked)</label>
                       <select class="form-select" aria-label="Default select example" required disabled>
                         {{-- <option value="BSIT" selected>Bachelor of Science in Information Technology</option>
                         <option value="BSCS" selected>Bachelor of Science in Computer Science</option>
@@ -425,6 +494,7 @@
                       </select>
                     </div>
                     <div class="col-2">
+                      <label>Year Level</label>
                       <select class="form-select" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
                         <option value="1" selected>First-year</option>
@@ -432,6 +502,11 @@
                         <option value="3">Third-year</option>
                         <option value="4">Fourth-year</option>
                       </select>
+                    </div>
+                    <div class="col">
+                      <label>Candidate Platform</label>
+                      {{-- <textarea class="form-control"  required> --}}
+                        <textarea class="form-control" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                   </div>
                 </div>
