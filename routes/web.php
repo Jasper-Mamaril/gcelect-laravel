@@ -42,12 +42,15 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+    // Route::get('partylists/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
     Route::get('candidates/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
     Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
     Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'route']);
     Route::get('leaderboards/voting-leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
     Route::get('members/president', [App\Http\Controllers\MemberController::class, 'getPresident']);
-    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getVerifiedPartylists']);
+
+    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+    Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getApproved']);
 
     // Route::get('members/VPint', [App\Http\Controllers\MemberController::class, 'getVPinternal']);
     // Route::get('members/VPext', [App\Http\Controllers\MemberController::class, 'getVPexternal']);

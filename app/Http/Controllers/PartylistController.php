@@ -17,7 +17,16 @@ class PartylistController extends Controller
 
     }
 
-    public function getVerifiedPartylists()
+    public function getApproved()
+    {
+        // $partylists = Partylists::with('candidates')->all();
+        // $partylists = Partylists::all()->where('status', 'verification');
+        // $members = Members::all();
+        return view('admin.admin-home');
+
+    }
+
+    public function getforVerification()
     {
         // $partylists = Partylists::with('candidates')->all();
         // $partylists = Partylists::all()->where('status', 'verification');
