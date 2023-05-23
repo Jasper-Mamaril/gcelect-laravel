@@ -45,14 +45,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
 
 Route::group(['middleware' => ['auth']], function() {
     // users pages
-    Route::get('users/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+    Route::get('users/user-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
     Route::get('users/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
         // vote submit
         Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
     // admin pages
-    Route::get('admin/partylists-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
     Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getforVerification']);
     Route::get('admin/leaderboards', [App\Http\Controllers\PartylistController::class, 'getLeaderboards']);
     Route::get('admin/users-listing', [App\Http\Controllers\PartylistController::class, 'getApproved']);

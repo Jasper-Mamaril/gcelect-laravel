@@ -61,7 +61,7 @@ class VoteController extends Controller
         $vote->candidate_id=$request->input('act');
         $vote->save();
 
-        return redirect('candidates/voting');
+        return redirect('users/voting');
 
     }
 

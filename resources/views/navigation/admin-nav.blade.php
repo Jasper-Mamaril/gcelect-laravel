@@ -18,23 +18,29 @@
 
     <ul class="nav nav-pills flex-column mb-auto p-2">
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/partylists/partylists-home">
+            <a class="nav-link text-white" href="/admin/admin-home">
                 <i class='bx bx-list-ul icon'></i>
                 <span>Verified Partylists</span>
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white"  href="/candidates/voting">
+            <a class="nav-link text-white"  href="/admin/for-verification">
                 <i class='bx bx-upvote icon' ></i>    
                 <span>For Approval</span>
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/leaderboards/voting-leaderboards">
+            <a class="nav-link text-white" href="/admin/leaderboards">
                 <i class='bx bx-bar-chart-square icon' ></i>
                 <span>Leaderboards</span>
             </a>
         </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-white" href="/admin/users-listing">
+              <i class='bx bx-bar-chart-square icon' ></i>
+              <span>Registered Voters</span>
+          </a>
+      </li>
     </ul>
     <div class="dropdown-divider"></div>
     <div class=" p-2">

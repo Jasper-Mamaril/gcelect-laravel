@@ -18,19 +18,19 @@
 
     <ul class="nav nav-pills flex-column mb-auto p-2">
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/partylists/partylists-home">
+            <a class="nav-link text-white" href="/users/user-home">
                 <i class='bx bx-list-ul icon'></i>
                 <span>Partylists</span>
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white"  href="/candidates/voting">
+            <a class="nav-link text-white"  href="/users/voting">
                 <i class='bx bx-upvote icon' ></i>    
                 <span>Voting</span>
             </a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/leaderboards/voting-leaderboards">
+            <a class="nav-link text-white" href="/users/leaderboards">
                 <i class='bx bx-bar-chart-square icon' ></i>
                 <span>Leaderboards</span>
             </a>
