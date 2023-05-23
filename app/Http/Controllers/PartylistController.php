@@ -13,7 +13,7 @@ class PartylistController extends Controller
         // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all()->where('status', 'verification');
         // $members = Members::all();
-        return view('partylists.partylists-home', compact('partylists'));
+        return view('users.partylists-home', compact('partylists'));
 
     }
 

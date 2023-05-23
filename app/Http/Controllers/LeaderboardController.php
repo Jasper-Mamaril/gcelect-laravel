@@ -8,7 +8,7 @@ class LeaderboardController extends Controller
 {
     public function getLeaderboards()
     {
-        return view('leaderboards.voting-leaderboards');
+        return view('users.leaderboards');
     }
 
     /**

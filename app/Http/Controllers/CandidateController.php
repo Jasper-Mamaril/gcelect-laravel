@@ -46,7 +46,7 @@ class CandidateController extends Controller
         $acts = Candidates::with(['partylist' => function ($query) {
             $query->where('status', 'approved');}])->where('position_id', 12)->get();
             
-        return view('candidates.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
+        return view('users.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
 
     }
 

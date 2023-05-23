@@ -34,7 +34,7 @@ class LoginController extends Controller
             } if(auth()->user()->user_roles == 'partylist'){
                 return redirect()->intended('partylist/candidacy-home');
             } else {
-                return redirect()->intended('partylists/partylists-home');
+                return redirect()->intended('users/partylists-home');
                 // return redirect()->intended('admin/admin-home');
             }
 
