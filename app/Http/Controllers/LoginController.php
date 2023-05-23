@@ -16,39 +16,30 @@ class LoginController extends Controller
     //     return view('auth.adminlogin');
     // }
 
-    public function login(Request $request) {
+    public function login(Request $request){
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required']
+    ]);
 
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
 
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required']
-        ]);
+        $user = auth()->user();
 
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
-
-                // return redirect()->intended('users/user-home');
-
-            if(auth()->user()->user_roles == 'admin'){
-                return redirect()->intended('admin/admin-home');
-            } if(auth()->user()->user_roles == 'partylist'){
-                return redirect()->intended('partylist/partylists-home');
-            }
-            // } if(auth()->user()->user_roles == 'user'){
-                // return redirect()->intended('users/user-home');
-            // }
-            else {
-                // return redirect()->intended('error/error');
-                return redirect()->intended('users/user-home');
-                // return redirect()->intended('admin/admin-home');
-            }
-
+        if ($user->user_roles === 'admin') {
+            return redirect()->intended('/admin/admin-home');
+        } elseif ($user->user_roles === 'partylist') {
+            return redirect()->intended('/partylist/partylists-home');
+        } else {
+            return redirect()->intended('/users/user-home');
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match!'
-        ])->onlyInput('email');
     }
+
+    return back()->withErrors([
+        'email' => 'The provided credentials do not match!'
+    ])->onlyInput('email');
+}
 
     public function logout(){
         Session::flush();

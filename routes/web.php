@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PartylistController;
+use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\VoteController;
+use App\Http\Controllers\LeaderboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,13 +38,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/register', 'RegisterController@register')->name('register.perform');
     Route::post('/registerPartylist', 'RegisterController@registerPartylist')->name('registerPartylist.perform');
 
-
-
-    
-    // Route::get('/register', 'RegisterController@show')->name('register.show');
-    // Route::get('/login/admin', 'LoginController@showAdmin')->name('login.showAdmin');
-    // Route::post('stories/comment', 'CommentController@store')->name('comment.add');
-    // Route::get('favorites', 'FavoriteController@index')->name('favorite.index');
 });
 
 Route::group(['middleware' => ['auth']], function() {
@@ -66,16 +63,6 @@ Route::group(['middleware' => ['auth']], function() {
     // partylist page(new)
     Route::post('partylists/application', [App\Http\Controllers\PartylistController::class, 'applyPartylist']);
 
-
-
-
-    // Route::get('members/VPint', [App\Http\Controllers\MemberController::class, 'getVPinternal']);
-    // Route::get('members/VPext', [App\Http\Controllers\MemberController::class, 'getVPexternal']);
-    // Route::get('members/secretary', [App\Http\Controllers\MemberController::class, 'getSecretary']);
-    // Route::get('members/treasurer', [App\Http\Controllers\MemberController::class, 'getTreasurer']);
-    // Route::get('members/auditor', [App\Http\Controllers\MemberController::class, 'getAuditor']);
-    // Route::get('members/pio', [App\Http\Controllers\MemberController::class, 'getPio']);
-    // Route::get('members/', [App\Http\Controllers\MemberController::class, 'voting']);
 });
 
 
