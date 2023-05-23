@@ -118,10 +118,6 @@
                             </div>
                                 
                             <div class="input-field">
-                                <i class="fas fa-user"></i>
-                                <input type="text" name="lastname" required/>
-                            </div>
-                            <div class="input-field">
                                 <i class="fas fa-envelope"></i>
                                 <input type="email" placeholder="Email" name="email" required/>
                             </div>

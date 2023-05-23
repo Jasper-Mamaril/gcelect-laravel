@@ -33,7 +33,7 @@ class RegisterController extends Controller
         // dd($request);
         $user = User::create([
             'user_fname' => $request->firstname,
-            'user_lname' => $request->lastname,
+            'user_lname' => 'Partylist',
             'email' => $request->email,
             'user_roles' => 'partylist',
             'username' => $request->username,

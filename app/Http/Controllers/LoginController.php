@@ -27,15 +27,16 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-                return redirect()->intended('partylists/partylists-home');
+                // return redirect()->intended('partylists/partylists-home');
 
-            // if(auth()->user()->role == 'admin'){
-            //     return redirect()->intended('admin/home');
-            // } if(auth()->user()->role == 'partylist'){
-            //     return redirect()->intended('partylist/candidacy-home');
-            // } else {
-            //     return redirect()->intended('partylists/partylists-home');
-            // }
+            if(auth()->user()->user_roles == 'admin'){
+                return redirect()->intended('admin/admin-home');
+            } if(auth()->user()->user_roles == 'partylist'){
+                return redirect()->intended('partylist/candidacy-home');
+            } else {
+                return redirect()->intended('partylists/partylists-home');
+                // return redirect()->intended('admin/admin-home');
+            }
 
         }
 

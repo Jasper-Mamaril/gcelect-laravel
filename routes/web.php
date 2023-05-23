@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'route']);
     Route::get('leaderboards/voting-leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
     Route::get('members/president', [App\Http\Controllers\MemberController::class, 'getPresident']);
+    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getVerifiedPartylists']);
 
     // Route::get('members/VPint', [App\Http\Controllers\MemberController::class, 'getVPinternal']);
     // Route::get('members/VPext', [App\Http\Controllers\MemberController::class, 'getVPexternal']);
