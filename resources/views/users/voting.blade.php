@@ -25,18 +25,8 @@
             </div>  -->
             <div class="bg-dark rounded">
 
-              {{-- @if ($userStatus == 'active')
-                <h1>Welcome to the Active User Dashboard!</h1>
-                <!-- Display content for active users -->
-            @elseif ($userStatus == 'pending')
-                <h1>Your account is pending approval.</h1>
-                <!-- Display content for pending users -->
-            @else
-                <h1>Your account is inactive.</h1>
-                <!-- Display content for inactive users -->
-            @endif
-               --}}
-               
+              @if (auth()->user()->user_status == 'no')
+           
               <form action="{{ route('submit-form') }}"  method="POST" class="p-3">
                 @csrf
 
@@ -307,6 +297,13 @@
                 </div>
               </div>
               </form>
+
+              @else
+                  <h1>Your account is pending approval.</h1>
+              @endif
+              
+
+              
             </div>
           </div>
         </main>

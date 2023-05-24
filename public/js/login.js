@@ -14,6 +14,11 @@ function logout() {
         })
         .then((result) => {
             if (result.isConfirmed) {
+                $.ajaxSetup({
+                    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                  });
                 $.ajax({
                     type: "GET",
                     url: "/logout",

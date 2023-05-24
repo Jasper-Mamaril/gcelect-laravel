@@ -75,9 +75,21 @@ class VoteController extends Controller
         $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
+        $user = auth()->user();
+        $user->user_status = 'yes';
+        $user->save();
 
         return redirect('users/voting');
 
+    }
+
+    public function updateUserStatus()
+    {
+        $user = auth()->user();
+        $user->user_status = 'yes';
+        $user->save();
+    
+        return view('user/voting', compact('userStatus'));
     }
 
     // public function getVotelist()
