@@ -14,7 +14,7 @@ class AddNewFieldsToCandidates extends Migration
     public function up()
     {
         Schema::table('candidates', function (Blueprint $table) {
-            $table->string('candidate_platform');
+            $table->string('candidate_platform')->nullable();
             $table->string('candidate_achievement')->nullable();
         });
     }

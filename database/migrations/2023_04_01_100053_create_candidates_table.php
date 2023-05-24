@@ -15,16 +15,15 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->BigIncrements('id');
-            $table->string('candidate_fname');
-            $table->string('candidate_lname');
+            $table->string('candidate_fname')->nullable();
+            $table->string('candidate_lname')->nullable();
             $table->BigInteger('position_id')->unsigned();
             $table->foreign('position_id')->references('id')->on('positions');
             $table->BigInteger('partylist_id')->unsigned();
             $table->foreign('partylist_id')->references('id')->on('partylists');
             // $table->string('partylist_name');
-
-            $table->string('candidate_program');
-            $table->string('candidate_yrlevel');
+            $table->string('candidate_program')->nullable();
+            $table->string('candidate_yrlevel')->nullable();
             $table->LongText('candidate_picture')->nullable();
             $table->timestamp('candidate_verified_at')->nullable();
             $table->timestamps();

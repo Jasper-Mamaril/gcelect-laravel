@@ -65,11 +65,141 @@ class PartylistController extends Controller
     public function insertCandidates()
     {
 
-    // $partylist = new Partylists; 
-    // $partylist->fill($request->all());
-    // $partylist->save();
+        // $partylist = auth()->user();
+        // $partylist->partylist_status = 'edit';
+        // $partylist->save();
 
-    return view('partylist.partylists-home');
+        return view('partylist.partylists-home');
+    }
+
+    public function submitForm(Request $request)
+    {
+        $maxId = Partylists::max('id');
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 1;
+        $candidate->candidate_fname = $request->input('presidentFname');
+        $candidate->candidate_lname = $request->input('presidentLname');
+        $candidate->candidate_program = $request->input('presidentProgram');
+        $candidate->candidate_platform = $request->input('presidentPlatform');
+        $candidate->candidate_yrlevel = $request->input('presidentYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 2;
+        $candidate->candidate_fname = $request->input('internalFname');
+        $candidate->candidate_lname = $request->input('internalLname');
+        $candidate->candidate_program = $request->input('internalProgram');
+        $candidate->candidate_platform = $request->input('internalPlatform');
+        $candidate->candidate_yrlevel = $request->input('internalYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 3;
+        $candidate->candidate_fname = $request->input('externalFname');
+        $candidate->candidate_lname = $request->input('externalLname');
+        $candidate->candidate_program = $request->input('externalProgram');
+        $candidate->candidate_platform = $request->input('externalPlatform');
+        $candidate->candidate_yrlevel = $request->input('externalYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 4;
+        $candidate->candidate_fname = $request->input('secretaryFname');
+        $candidate->candidate_lname = $request->input('secretaryLname');
+        $candidate->candidate_program = $request->input('secretaryProgram');
+        $candidate->candidate_platform = $request->input('secretaryPlatform');
+        $candidate->candidate_yrlevel = $request->input('secretaryYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 5;
+        $candidate->candidate_fname = $request->input('treasurerFname');
+        $candidate->candidate_lname = $request->input('treasurerLname');
+        $candidate->candidate_program = $request->input('treasurerProgram');
+        $candidate->candidate_platform = $request->input('treasurerPlatform');
+        $candidate->candidate_yrlevel = $request->input('treasurerYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 6;
+        $candidate->candidate_fname = $request->input('auditorFname');
+        $candidate->candidate_lname = $request->input('auditorLname');
+        $candidate->candidate_program = $request->input('auditorProgram');
+        $candidate->candidate_platform = $request->input('auditorPlatform');
+        $candidate->candidate_yrlevel = $request->input('auditorYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 7;
+        $candidate->candidate_fname = $request->input('pioFname');
+        $candidate->candidate_lname = $request->input('pioLname');
+        $candidate->candidate_program = $request->input('pioProgram');
+        $candidate->candidate_platform = $request->input('pioPlatform');
+        $candidate->candidate_yrlevel = $request->input('pioYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 8;
+        $candidate->candidate_fname = $request->input('bmFname');
+        $candidate->candidate_lname = $request->input('bmLname');
+        $candidate->candidate_program = $request->input('bmProgram');
+        $candidate->candidate_platform = $request->input('bmPlatform');
+        $candidate->candidate_yrlevel = $request->input('bmYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 9;
+        $candidate->candidate_fname = $request->input('bsitFname');
+        $candidate->candidate_lname = $request->input('bsitLname');
+        $candidate->candidate_program = 'BSIT';
+        $candidate->candidate_platform = $request->input('bsitPlatform');
+        $candidate->candidate_yrlevel = $request->input('bsitYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 10;
+        $candidate->candidate_fname = $request->input('bscsFname');
+        $candidate->candidate_lname = $request->input('bscsLname');
+        $candidate->candidate_program = 'BSCS';
+        $candidate->candidate_platform = $request->input('bscsPlatform');
+        $candidate->candidate_yrlevel = $request->input('bscsYear');;
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 11;
+        $candidate->candidate_fname = $request->input('bsemcFname');
+        $candidate->candidate_lname = $request->input('bsemcLname');
+        $candidate->candidate_program = 'BSEMC';
+        $candidate->candidate_platform = $request->input('bsemcPlatform');
+        $candidate->candidate_yrlevel = $request->input('bsemcYear');
+        $candidate->save();
+
+        $candidate = new Candidates;
+        $candidate->partylist_id = $maxId; 
+        $candidate->position_id = 12;
+        $candidate->candidate_fname = $request->input('actFname');
+        $candidate->candidate_lname = $request->input('actLname');
+        $candidate->candidate_program = 'ACT';
+        $candidate->candidate_platform = $request->input('actPlatform');
+        $candidate->candidate_yrlevel = $request->input('actYear');
+        $candidate->save();
+
+        $user = auth()->user();
+        $user->user_status = 'edit';
+        $user->save();
+
+        return view('partylist.partylists-home');
     }
 
     /**

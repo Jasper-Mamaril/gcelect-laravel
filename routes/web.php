@@ -65,7 +65,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     // partylist page(new)
     Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);
-
+    Route::post('/submit-form', [App\Http\Controllers\PartylistController::class, 'submitForm'])->name('submit-form');
 });
 
 
