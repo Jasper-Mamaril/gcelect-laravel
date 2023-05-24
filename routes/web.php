@@ -7,6 +7,7 @@ use App\Http\Controllers\PartylistController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,9 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'App\Http\Controllers'], function ()
 {
-    // login 
-    Route::get('/login', 'LoginController@show')->name('login.show');
-    Route::post('/login', 'LoginController@login')->name('login.perform');
+    // login (pushing '/' instead of '/login')
+    Route::get('/', 'LoginController@show')->name('login.show');
+    Route::post('/', 'LoginController@login')->name('login.perform');
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
@@ -51,8 +52,8 @@ Route::group(['middleware' => ['auth']], function() {
     // admin pages
     Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
     Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getforVerification']);
-    Route::get('admin/leaderboards', [App\Http\Controllers\PartylistController::class, 'getLeaderboards']);
-    Route::get('admin/users-listing', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+    Route::get('admin/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getAdminLeaderboards']);
+    Route::get('admin/users-listing', [App\Http\Controllers\UserController::class, 'index']);
     // Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getApproved']);
 
     // partylist page(old)
@@ -61,7 +62,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('partylists/all', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
 
     // partylist page(new)
-    Route::post('partylists/application', [App\Http\Controllers\PartylistController::class, 'applyPartylist']);
+    Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);
 
 });
 

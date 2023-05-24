@@ -22,8 +22,7 @@ function logout() {
                     success: function(response) {}
                 });
 
-                location.reload();
-
+                window.location.reload();
             }
 
         })

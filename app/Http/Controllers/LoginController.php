@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Artisan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,7 @@ class LoginController extends Controller
     public function logout(){
         Session::flush();
         Auth::logout();
+        // Artisan::call('route:clear'); // Clear route cache
         return redirect('/');
     }
 }

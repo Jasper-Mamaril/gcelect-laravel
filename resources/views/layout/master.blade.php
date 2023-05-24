@@ -21,6 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+    
 
 <!-- <script src="js/leaderboards.js"></script> -->
     <script src=""></script>
@@ -31,12 +33,13 @@
 <body>
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
         
-    @include('navigation.navigation')
+    {{-- @include('navigation.navigation') --}}
       @yield('content')
 
 </body>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <script src="{{asset('js/leaderboards.js')}}"></script>
 <script src="{{asset('js/login.js')}}"></script>
+<script src="{{asset('js/gcelect.js')}}"></script>
 
 </html>

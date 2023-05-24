@@ -2,6 +2,7 @@
 
 @section('content')
 @auth
+@include('navigation.admin-nav')
   
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
 
@@ -17,7 +18,7 @@
 
           <div class="column container-fluid active p-2 text-white">
             <div class="d-flex bg-danger p-3 mb-1 rounded">
-              Partylists Verification
+              Verified Partylists
             </div>
             <!-- <div class="d-flex mb-1">
               <div class="col-4 bg-info p-3 rounded-start"></div>

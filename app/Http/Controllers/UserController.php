@@ -4,19 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LeaderboardController extends Controller
+class UserController extends Controller
 {
-    public function getLeaderboards()
-    {
-        return view('users.leaderboards');
-    }
-
-    public function getAdminLeaderboards()
-    {
-        // return view('users.leaderboards');
-         return view('admin.leaderboards');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +14,7 @@ class LeaderboardController extends Controller
     public function index()
     {
         //
+        return view('admin.users-listing');
     }
 
     /**

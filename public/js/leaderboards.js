@@ -3,22 +3,28 @@ window.onload = function () {
 	var chart = new CanvasJS.Chart("presidentsContainer", {
 		
 		animationEnabled: true,
-		exportEnabled: true,	
+		exportEnabled: true,
 		title:{
-			text: "President"
+			text:"President"
 		},
-		legend:{
-			cursor: "pointer",
-			itemclick: explodePie
+		axisX:{
+			interval: 1
+		},
+		axisY2:{
+			interlacedColor: "rgba(1,77,101,.2)",
+			gridColor: "rgba(1,77,101,.1)",
+			title: "Votes"
 		},
 		data: [{
-			type: "pie",
-			showInLegend: true,
-			toolTipContent: "{name}: <strong>{y}%</strong>",
-			indexLabel: "{name} - {y}%",
+			type: "bar",
+			name: "companies",
+			axisYType: "secondary",
 			dataPoints: [
-				{ y: 60, name: "School Aid"},
-				{ y: 40, name: "Medical Aid" },
+				{ y: 28, label: "Germany" },
+				{ y: 52, label: "Japan" },
+				{ y: 103, label: "China" },
+				{ y: 29, label: "France" },
+				{ y: 134, label: "US" }
 			]
 		}]
 	});
@@ -31,20 +37,19 @@ window.onload = function () {
 		title:{
 			text: "Vice President for External Affairs"
 		},
-		legend:{
-			cursor: "pointer",
-			itemclick: explodePie
+		axisY: {
+			title: "Votes"
 		},
-		data: [{
-			type: "pie",
-			showInLegend: true,
-			toolTipContent: "{name}: <strong>{y}%</strong>",
-			indexLabel: "{name} - {y}%",
-			dataPoints: [
-				{ y: 26, name: "School Aid"},
-				{ y: 20, name: "Medical Aid" },
-				{ y: 5, name: "Debt/Capital" },
-				{ y: 3, name: "Elected Officials" },
+		data: [{        
+			type: "column",  
+			showInLegend: true, 
+			legendMarkerColor: "grey",
+			dataPoints: [      
+				{ y: 15,  label: "Iran" },
+				{ y: 30, label: "Venezuela" },
+				{ y: 26,  label: "Saudi" },
+				{ y: 16,  label: "Canada" },
+				{ y: 14,  label: "Iraq" },
 			]
 		}]
 	});

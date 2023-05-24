@@ -35,12 +35,7 @@
                 <span>Leaderboards</span>
             </a>
         </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/candidates/candidacy">
-                <i class='bx bx-id-card icon'></i>
-                <span>Candidacy</span>
-            </a>
-        </li>
+
     </ul>
     <div class="dropdown-divider"></div>
     <div class=" p-2">

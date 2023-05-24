@@ -2,6 +2,7 @@
 
 @section('content')
 @auth
+@include('navigation.navigation')
   
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
 

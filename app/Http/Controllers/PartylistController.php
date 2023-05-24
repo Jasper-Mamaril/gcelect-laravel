@@ -48,6 +48,16 @@ class PartylistController extends Controller
     return $partylist;
     }
 
+    public function insertCandidates()
+    {
+
+    // $partylist = new Partylists; 
+    // $partylist->fill($request->all());
+    // $partylist->save();
+
+    return view('partylist.partylists-home');
+    }
+
     /**
      * Display a listing of the resource.
      *
