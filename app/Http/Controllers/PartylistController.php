@@ -22,11 +22,23 @@ class PartylistController extends Controller
     {
         // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all()->where('status', 'approved');
-        $candidates = Candidates::all()->where('partylist_id', 2);
+        $candidates = Candidates::all()->where('partylist_id', 1);
         // $members = Members::all();
+        
         return view('admin.admin-home', compact('partylists','candidates'));
 
     }
+
+    // public function getApproved($id)
+    // {
+    //     $partylists = Partylists::where('status', 'approved')->get();
+    //     $candidates = Candidates::where('partylist_id', $id)->get();
+
+    //     return response()->json([
+    //         'partylists' => $partylists,
+    //         'candidates' => $candidates,
+    //     ]);
+    // }
 
     public function getforVerification()
     {
@@ -44,6 +56,7 @@ class PartylistController extends Controller
         $partylists = Partylists::all()->where('status', 'declined');
         $candidates = Candidates::all()->where('partylist_id', 2);
         // $members = Members::all();
+        
         return view('admin.declined', compact('partylists','candidates'));
 
     }
