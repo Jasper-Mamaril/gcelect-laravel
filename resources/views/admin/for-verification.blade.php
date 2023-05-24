@@ -36,58 +36,31 @@
                   <table class="table  align-middle">
                     <thead class="text-center ">
                       <tr>
-                        <th scope="col" class="col-1">#</th>
                         <th scope="col" class="col-2">Partylist Name</th>
-                        <th scope="col" class="col-2">Email</th>
+                        {{-- <th scope="col" class="col-2">Email</th> --}}
                         <th scope="col" class="col-2">Date Submitted</th>
                         <th scope="col" class="col-1">Status</th>
                         <th scope="col" class="col-4">Actions</th>
                       </tr>
                     </thead>
                     <tbody class="text-center"  id="myTable">
+
+                    @foreach ($partylists as $verification)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Tindig Partylist</td>
-                        <td>tp@gordoncollege.edu.ph</td>
-                        <td>2023-05-22</td>
-                        <td><span class="text-primary text-capitalize">Verification</span></td>
+                        <td scope="row">{{$verification->partylist_name}}</td>
+                        {{-- <td>{{$verification->email}}</td> --}}
+                        <td>{{$verification->created_at}}</td>
+                        <td><span class="text-primary text-capitalize">{{$verification->status}}</span></td>
                         <td>
                           <div class="display-flex">
-                            <span class="btn btn-outline-danger" role="button" onclick="decline()">Decline</span>
                             <span class="btn btn-primary" role="button" 
                             data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
                             <span class="btn btn-success" role="button" onclick="approve()">Approve</span>
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Kapamilya Partylist</td>
-                        <td>kapap@gordoncollege.edu.ph</td>
-                        <td>2023-05-23</td>
-                        <td><span class="text-success text-capitalize">approved</span></td>
-                        <td>
-                          <div class="display-flex">
-                            <span class="btn btn-outline-danger" role="button" onclick="decline()">Decline</span>
-                            <span class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                            {{-- <span class="btn btn-success" role="button">Approve</span> --}}
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Kapitbahay Partylist</td>
-                        <td>kapitp@gordoncollege.edu.ph</td>
-                        <td>2023-05-24</td>
-                        <td><span class="text-danger text-capitalize">declined</span></td>
-                        <td>
-                          <div class="display-flex">
-                            {{-- <span class="btn btn-danger" role="button">Decline</span> --}}
-                            <span class="btn btn-success" role="button" onclick="approve()">Approve</span>
-                            <span class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                          </div>
-                        </td>
-                      </tr>
+                    @endforeach
+
                     </tbody>
                   </table>
                 </div>

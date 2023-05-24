@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Partylists;
 use App\Models\Candidates;
+use App\Models\Positions;
 
 class PartylistController extends Controller
 {
@@ -20,20 +21,31 @@ class PartylistController extends Controller
     public function getApproved()
     {
         // $partylists = Partylists::with('candidates')->all();
-        // $partylists = Partylists::all()->where('status', 'verification');
+        $partylists = Partylists::all()->where('status', 'approved');
+        $candidates = Candidates::all()->where('partylist_id', 2);
         // $members = Members::all();
-        return view('admin.admin-home');
+        return view('admin.admin-home', compact('partylists','candidates'));
 
     }
 
     public function getforVerification()
     {
         // $partylists = Partylists::with('candidates')->all();
-        // $partylists = Partylists::all()->where('status', 'verification');
+        $partylists = Partylists::all()->where('status', 'verification');
         // $members = Members::all();
-        return view('admin.for-verification');
+        return view('admin.for-verification', compact('partylists'));
 
     }
+
+    public function getDeclined()
+    {
+        // $partylists = Partylists::with('candidates')->all();
+        $partylists = Partylists::all()->where('status', 'declined');
+        // $members = Members::all();
+        return view('admin.declined', compact('partylists'));
+
+    }
+   
     
 
     public function applyPartylist()

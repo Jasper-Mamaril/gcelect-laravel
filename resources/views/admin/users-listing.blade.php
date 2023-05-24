@@ -27,59 +27,38 @@
 
                 <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
                   <div class="col-4">
-                  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                  <input class="form-control" id="myInput" type="text" placeholder="Search..">   
                   </div>
+
+                   {{-- add reset voting button here--}}
+
                   <table class="table align-middle">
                     <thead class="text-center ">
                       <tr>
-                        <th scope="col" class="col-2">First Name</th>
-                        <th scope="col" class="col-2">Last Name</th>
+                        <th scope="col" class="col-2">Full Name</th>
+                        {{-- <th scope="col" class="col-2">Last Name</th> --}}
                         <th scope="col" class="col-3">Email</th>
                         <th scope="col" class="col-2">Voting Status</th>
                         <th scope="col" class="col-3">Actions</th>
                       </tr>
                     </thead>
-                    <tbody class="text-center" id="myTable">
+                    <tbody class="text-center" id="myTable">                    
+                      @foreach ($voters as $voter)
+
                       <tr>
-                        <th scope="row">Jasper Robert</th>
-                        <td>Mamaril</td>
-                        <td>jm@gordoncollege.edu.ph</td>
-                        <td><span class="text-success text-capitalize">Yes</span></td>
+                        <th scope="row">{{$voter->user_fname}} {{$voter->user_lname}}</th>
+                        {{-- <td>Mamaril</td> --}}
+                        <td>{{$voter->email}}</td>
+                        <td><span class="text-success text-capitalize">{{$voter->user_status}}</span></td>
                         <td>
                           <div class="display-flex">
-                            <span class="btn btn-outline-danger" role="button" onclick="deleteUser()">Delete</span>
                             <span class="btn btn-primary" role="button" 
                             data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                            <span class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</span>
                           </div>
                         </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Lou Bryan</th>
-                        <td>Ballesteros</td>
-                        <td>lb@gordoncollege.edu.ph</td>
-                        <td><span class="text-success text-capitalize">Yes</span></td>
-                        <td>
-                          <div class="display-flex">
-                            <span class="btn btn-outline-danger" role="button" onclick="deleteUser()">Delete</span>
-                            <span class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                            <span class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Anthony</th>
-                        <td>Mizal</td>
-                        <td>am@gordoncollege.edu.ph</td>
-                        <td><span class="text-danger text-capitalize" >No</span></td>
-                        <td>
-                          <div class="display-flex">
-                            <span class="btn btn-outline-danger" role="button" onclick="deleteUser()">Delete</span>
-                            <span class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                            <span class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</span>
-                          </div>
-                        </td>
-                      </tr>
+                      </tr>   
+                      @endforeach
+
                     </tbody>
                   </table>
                 </div>

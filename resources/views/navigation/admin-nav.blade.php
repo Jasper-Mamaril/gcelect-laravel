@@ -31,6 +31,12 @@
             </a>
         </li>
         <li class="nav-item" role="presentation">
+          <a class="nav-link text-white"  href="/admin/declined">
+              <i class='bx bx-upvote icon' ></i>    
+              <span>Declined</span>
+          </a>
+      </li>
+        <li class="nav-item" role="presentation">
             <a class="nav-link text-white" href="/admin/leaderboards">
                 <i class='bx bx-bar-chart-square icon' ></i>
                 <span>Leaderboards</span>

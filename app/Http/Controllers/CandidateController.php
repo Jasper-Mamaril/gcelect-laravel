@@ -55,6 +55,16 @@ class CandidateController extends Controller
         return view('candidates.candidacy');
     }
 
+    public function getPartylistDetails()
+    {
+        // $partylists = Partylists::with('candidates')->all();
+        
+        // $members = Members::all();
+        // $partylists = Candidates::with(['position' => function ($query) {
+        //     $query->where('status', 'approved');}])->get();
+        return view('admin.admin-home', compact('candidates'));
+
+    }
 
     /**
      * Display a listing of the resource.

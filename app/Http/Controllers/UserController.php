@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function getAllVoters()
+    {
+        $voters = User::all()->where('user_roles', 'user');
+        return view('admin.users-listing', compact('voters'));
+    }
+
     /**
      * Display a listing of the resource.
      *

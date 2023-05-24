@@ -51,9 +51,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     // admin pages
     Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+    // Route::get('admin/admin-home', [App\Http\Controllers\CandidateController::class, 'getPartylistDetails']);
     Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getforVerification']);
+    Route::get('admin/declined', [App\Http\Controllers\PartylistController::class, 'getDeclined']);
     Route::get('admin/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getAdminLeaderboards']);
-    Route::get('admin/users-listing', [App\Http\Controllers\UserController::class, 'index']);
+    Route::get('admin/users-listing', [App\Http\Controllers\UserController::class, 'getAllVoters']);
     // Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getApproved']);
 
     // partylist page(old)
