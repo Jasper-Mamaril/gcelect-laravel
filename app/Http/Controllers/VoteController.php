@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Models\Votes;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {   
     public function submitForm(Request $request)
-    {
+    {   
+        $userId = auth()->id(); // Retrieve the user ID from the session
         // Retrieve the submitted form data
         // $president = new Votes;
         // $president = $request->input('president');
@@ -15,57 +17,76 @@ class VoteController extends Controller
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('president');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('vpInternal');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('vpExternal');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('secretary');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('treasurer');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('auditor');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('pio');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('business_manager');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('bsit');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('bscs');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('bsemc');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('act');
+        $vote->user_id = $userId; // Assign the user ID to the vote
         $vote->save();
+
 
         return redirect('users/voting');
 
     }
 
-
+    // public function getVotelist()
+    // {
+    //     $user = auth()->user();
+    //     $userStatus = $user->user_status;
+    
+    //     return view('user/voting', compact('userStatus'));
+    // }
 
     /**
      * Display a listing of the resource.

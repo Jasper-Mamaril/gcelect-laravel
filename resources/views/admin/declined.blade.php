@@ -36,6 +36,7 @@
                   <table class="table  align-middle">
                     <thead class="text-center ">
                       <tr>
+                        <th scope="col" class="col-1">id</th>
                         <th scope="col" class="col-2">Partylist Name</th>
                         {{-- <th scope="col" class="col-2">Email</th> --}}
                         <th scope="col" class="col-2">Date Submitted</th>
@@ -47,6 +48,7 @@
 
                     @foreach ($partylists as $declined)
                       <tr>
+                        <td scope="row">{{$declined->id}}</td>
                         <td scope="row">{{$declined->partylist_name}}</td>
                         {{-- <td>{{$verification->email}}</td> --}}
                         <td>{{$declined->created_at}}</td>
@@ -87,25 +89,25 @@
             <table class="table table-dark table-striped rounded">
                   <tbody>
                     <thead>
-                        <th scope="row"></th>
-                        <th>Name</th>
-                        <th>Position</th>
+                      <th scope="row">Name</th>
+                      <th>Position</th>
+                      <th>Program</th>
+                      <th>Year Level</th>
+                      <th>Platform</th> 
                     </thead>
+                   
+                    @foreach ($candidates as $candidate)
+
                     <tr class="table-active">
-                        <th scope="row">1</th>
-                        <td>Larry the Bird</td>
-                        <td>President</td>
+                        <th scope="row">{{$candidate->candidate_fname}} {{$candidate->candidate_lname}}</th>
+                        <td>{{$candidate->position_name}}</td>
+                        <td>{{$candidate->candidate_program}}</td>
+                        <td>{{$candidate->candidate_yrlevel}}</td>
+                        <td>{{$candidate->candidate_platform}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Larry the Bird</td>
-                        <td>Vice-president for External Affairs</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry the Bird</td>
-                      <td>Vice-president for Internal Affairs</td>
-                    </tr>
+  
+                    @endforeach
+
                   </tbody>
             </table>
         </div>

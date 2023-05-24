@@ -24,7 +24,19 @@
               <div class="col-7 bg-warning p-3 rounded-end"></div>
             </div>  -->
             <div class="bg-dark rounded">
-              
+
+              {{-- @if ($userStatus == 'active')
+                <h1>Welcome to the Active User Dashboard!</h1>
+                <!-- Display content for active users -->
+            @elseif ($userStatus == 'pending')
+                <h1>Your account is pending approval.</h1>
+                <!-- Display content for pending users -->
+            @else
+                <h1>Your account is inactive.</h1>
+                <!-- Display content for inactive users -->
+            @endif
+               --}}
+               
               <form action="{{ route('submit-form') }}"  method="POST" class="p-3">
                 @csrf
 
@@ -32,9 +44,10 @@
                 <div class="bg-light m-1 rounded p-2 text-dark">
                   <div class="col p-2">President: (Content goes here)</div>
                   <div class="d-flex flex-wrap p-2 gap-4">
-                    
+                    {{-- <input class="form-check-input" type="radio" name="user" id="iduserID" value="{{$president->id}}" required> --}}
+
                     @foreach ($presidents as $president)
-            
+                   
                       <div class="column">
                         <input class="form-check-input" type="radio" name="president" id="idPresident" value="{{$president->id}}" required>
                         <label class="form-check-label" for="idPresident">

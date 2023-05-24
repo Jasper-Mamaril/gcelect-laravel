@@ -17,15 +17,19 @@ class VoteSeeders extends Seeder
         DB::table('votes')->insert([
             [
                 'candidate_id' => 1,
+                'user_id' => 2,
             ],
             [
                 'candidate_id' => 3,
+                'user_id' => 2,
             ],
             [
                 'candidate_id' => 4,
+                'user_id' => 2,
             ],
             [
                 'candidate_id' => 2,
+                'user_id' => 2,
             ],
 
         ]);

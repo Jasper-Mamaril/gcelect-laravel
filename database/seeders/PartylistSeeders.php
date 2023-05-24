@@ -31,6 +31,14 @@ class PartylistSeeders extends Seeder
                 'partylist_name' => 'Kapitbahay',
                 'status' => 'verification'
             ],
+            [
+                'partylist_name' => 'Kuya',
+                'status' => 'declined'
+            ],
+            [
+                'partylist_name' => 'Ate',
+                'status' => 'declined'
+            ],
 
         ]);
     }

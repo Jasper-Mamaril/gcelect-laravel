@@ -32,8 +32,9 @@ class PartylistController extends Controller
     {
         // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all()->where('status', 'verification');
+        $candidates = Candidates::all()->where('partylist_id', 2);
         // $members = Members::all();
-        return view('admin.for-verification', compact('partylists'));
+        return view('admin.for-verification', compact('partylists','candidates'));
 
     }
 
@@ -41,8 +42,9 @@ class PartylistController extends Controller
     {
         // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all()->where('status', 'declined');
+        $candidates = Candidates::all()->where('partylist_id', 2);
         // $members = Members::all();
-        return view('admin.declined', compact('partylists'));
+        return view('admin.declined', compact('partylists','candidates'));
 
     }
    

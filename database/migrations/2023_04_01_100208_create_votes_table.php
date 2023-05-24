@@ -18,6 +18,9 @@ class CreateVotesTable extends Migration
 
             $table->BigInteger('candidate_id')->unsigned();
             $table->foreign('candidate_id')->references('id')->on('candidates');
+
+            $table->BigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         
             $table->timestamp('vote_verified_at')->nullable();
             $table->timestamps();
