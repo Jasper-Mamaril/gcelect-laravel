@@ -61,16 +61,14 @@ class PartylistController extends Controller
 
     }
    
-    
-
     public function applyPartylist()
     {
-    // $course->name = $request->name;
-    // $course->description = $request->description;
-    // $course->is_draft = $request->is_draft;
-    $partylist = new Partylists; 
-    $partylist->fill($request->all());
-    $partylist->save();
+        // $course->name = $request->name;
+        // $course->description = $request->description;
+        // $course->is_draft = $request->is_draft;
+        $partylist = new Partylists; 
+        $partylist->fill($request->all());
+        $partylist->save();
 
     return $partylist;
     }
