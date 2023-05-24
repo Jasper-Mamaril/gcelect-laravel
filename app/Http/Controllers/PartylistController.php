@@ -18,11 +18,20 @@ class PartylistController extends Controller
 
     }
 
+    // public function getApproved($partylistId)
+    // {
+    //     $partylists = Partylists::all()->where('status', 'approved');
+    //     $getPartylistID = Partylists::findOrFail($partylistId);
+    //     $candidates = $getPartylistID->candidates;
+
+    //     return view('admin.admin-home', compact('partylists','candidates'));
+    // }
+
     public function getApproved()
     {
         // $partylists = Partylists::with('candidates')->all();
         $partylists = Partylists::all()->where('status', 'approved');
-        $candidates = Candidates::all()->where('partylist_id', 2);
+        $candidates = Candidates::all()->where('partylist_id', 1);
         // $members = Members::all();
         return view('admin.admin-home', compact('partylists','candidates'));
 
