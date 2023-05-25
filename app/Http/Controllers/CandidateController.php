@@ -78,7 +78,7 @@ class CandidateController extends Controller
             ->select('candidates.*', 'partylists.partylist_name', 'positions.position_name')
             ->get();
 
-        return view('partylist.partylists-home', compact('members'));
+        return view('partylist.partylists-candidates', compact('members'));
     }
 
     /**

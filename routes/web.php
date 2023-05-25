@@ -65,8 +65,8 @@ Route::group(['middleware' => ['auth']], function() {
     // Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getApproved']);
 
     // partylist page(new)
-    Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);
-    Route::get('partylist/partylists-home', [App\Http\Controllers\CandidateController::class, 'getPartylistCandidates']);
+    Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'getPartylistHomeView']);
+    // Route::get('partylist/partylists-candidates', [App\Http\Controllers\CandidateController::class, 'getPartylistCandidates']);
     Route::post('/submit-form', [App\Http\Controllers\PartylistController::class, 'submitForm'])->name('submit-form');
 });
 

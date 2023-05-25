@@ -25,7 +25,7 @@
             </div>  -->
             <div class="bg-dark rounded">
               
-             
+              @if (auth()->user()->user_status == 'no')
                 <div class="d-flex bg-success p-3 mb-1 rounded">
                   Add Your Partylist Members
                 </div>
@@ -525,7 +525,10 @@
               </div>
               </form>
                   <!-- Display content for active users -->
-             
+              @else
+                  <h1>YES</h1>
+
+              @endif
 
               
             </div>

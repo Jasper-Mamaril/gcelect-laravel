@@ -18,11 +18,17 @@
 
     <ul class="nav nav-pills flex-column mb-auto p-2">
         <li class="nav-item" role="presentation">
-            <a class="nav-link text-white" href="/partylist/partylist-home">
+            <a class="nav-link text-white" href="/partylist/partylists-home">
                 <i class='bx bx-list-ul icon'></i>
-                <span>Partylists</span>
+                <span>Add Candidates</span>
             </a>
         </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-white" href="/partylist/partylists-candidates">
+              <i class='bx bx-list-ul icon'></i>
+              <span>Partylist Candidates</span>
+          </a>
+      </li>
     </ul>
     <div class="dropdown-divider"></div>
     <div class=" p-2">
