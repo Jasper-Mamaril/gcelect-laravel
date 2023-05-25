@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth']], function() {
     // users pages
     Route::get('users/user-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
     // partylist modal
-    Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
+   
     Route::get('users/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
     Route::get('users/votingList', [App\Http\Controllers\VoteController::class, 'getVotelist']);
         // vote submit
@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
     // admin pages
-    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved'])->name('admin.admin-home');
     // Route::get('admin/admin-home', [App\Http\Controllers\CandidateController::class, 'getPartylistDetails']);
     Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getforVerification']);
     Route::get('admin/declined', [App\Http\Controllers\PartylistController::class, 'getDeclined']);
@@ -66,8 +66,13 @@ Route::group(['middleware' => ['auth']], function() {
 
     // partylist page(new)
     Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);
-    Route::get('partylist/partylists-home', [App\Http\Controllers\CandidateController::class, 'getPartylistCandidates']);
+    Route::get('partylist/partylists-candidates', [App\Http\Controllers\CandidateController::class, 'getPartylistCandidates']);
     Route::post('/submit-form', [App\Http\Controllers\PartylistController::class, 'submitForm'])->name('submit-form');
+
+    // uses AJAX --MUST BE AT THE BOTTOM
+    Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
+    Route::post('/partylists/archive', [App\Http\Controllers\PartylistController::class, 'decline']);
+
 });
 
 

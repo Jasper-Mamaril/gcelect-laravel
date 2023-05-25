@@ -31,7 +31,7 @@ class LoginController extends Controller
         if ($user->user_roles === 'admin') {
             return redirect()->intended('/admin/admin-home');
         } elseif ($user->user_roles === 'partylist') {
-            return redirect()->intended('/partylist/partylists-home');
+            return redirect()->intended('/partylist/partylists-candidates');
         } else {
             return redirect()->intended('/users/user-home');
         }

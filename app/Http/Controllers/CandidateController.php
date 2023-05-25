@@ -78,7 +78,9 @@ class CandidateController extends Controller
             ->select('candidates.*', 'partylists.partylist_name', 'positions.position_name')
             ->get();
 
-        return view('partylist.partylists-home', compact('members'));
+            $status = Partylists::where('partylist_name', $userFname)->first()->status;
+
+        return view('partylist.partylists-candidates', compact('members','status'));
     }
 
     /**

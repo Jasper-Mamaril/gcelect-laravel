@@ -45,7 +45,7 @@
                     </thead>
                     <tbody class="text-center"  id="myTable">
 
-                    @foreach ($partylists as $approved)
+                      @foreach ($partylists as $approved)
                       <tr class="partylist-card" data-partylist-id="{{$approved->id}}">
                         <td scope="row">{{$approved->id}}</td>
                         <td scope="row">{{$approved->partylist_name}}</td>
@@ -55,12 +55,17 @@
                         <td>
                           <div class="display-flex">
                             <span class="btn btn-primary" role="button" 
-                            data-bs-toggle="ajax-modal" data-bs-target="#partylistModal" >Details</span>
-                            <span class="btn btn-danger" role="button" onclick="archive()">Archive</span>
+                              data-bs-toggle="ajax-modal" data-bs-target="#partylistModal">Details</span>
+                            <form action="/partylists/archive" method="POST">
+                              @csrf
+                              <button class="btn btn-danger" type="submit">Archive</button>
+                              <input hidden value="{{$approved->id}}" name="partylistID">
+                            </form>
                           </div>
                         </td>
                       </tr>
                     @endforeach
+                    
 
                     </tbody>
                   </table>

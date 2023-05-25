@@ -96,7 +96,53 @@ class PartylistController extends Controller
         ]);
     }
 
+    public function decline(Request $request)
+    {
+        // Find the partylist by ID
+        $partylist = Partylists::find($request->partylistID);
 
+        if ($partylist) {
+
+            $partylist->status = 'declined';
+            $partylist->save();
+
+            return back()->with('success', 'Partylist archived successfully');
+        } else {
+            return back()->with('error', 'Partylist not found');
+        }
+    }
+
+    public function approve(Request $request)
+    {
+        // Find the partylist by ID
+        $partylist = Partylists::find($request->approveID);
+
+        if ($partylist) {
+
+            $partylist->status = 'approved';
+            $partylist->save();
+
+            return back()->with('success', 'Partylist archived successfully');
+        } else {
+            return back()->with('error', 'Partylist not found');
+        }
+    }
+
+    public function verify(Request $request)
+    {
+        // Find the partylist by ID
+        $partylist = Partylists::find($request->verifyID);
+    
+        if ($partylist) {
+            // Update the partylist status to 'verification'
+            $partylist->status = 'verification';
+            $partylist->save();
+    
+            return back()->with('success', 'Partylist verified successfully');
+        } else {
+            return back()->with('error', 'Partylist not found');
+        }
+    }
     
 
     public function submitForm(Request $request)

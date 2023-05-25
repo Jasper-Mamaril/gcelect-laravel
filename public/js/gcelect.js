@@ -213,3 +213,57 @@ $(document).ready(function(){
     });
   });
 });
+
+function archivePartylist(verifiyID) {
+    // Make an AJAX request to update the partylist status
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    console.log(verifiyID);
+    $.ajax({
+        url: '/form-verification',
+        type: 'POST',
+        data: {
+            id: verifiyID
+        },
+        headers: {
+            'X-CSRF-TOKEN': csrfToken // Include the CSRF token in the request headers
+          },
+        success: function(response) {
+            // Handle the success response here
+            // For example, you can show a success message or update the UI
+            // location.reload();
+        },
+        error: function(xhr, status, error) {
+            // Handle the error response here
+            // For example, you can show an error message or handle the error gracefully
+        }
+    });
+}
+
+function archivePartylist(partylistId) {
+    // Make an AJAX request to update the partylist status
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    console.log(partylistId);
+    $.ajax({
+        url: '/form-verification',
+        type: 'POST',
+        data: {
+            id: partylistId
+        },
+        headers: {
+            'X-CSRF-TOKEN': csrfToken // Include the CSRF token in the request headers
+          },
+        success: function(response) {
+            // Handle the success response here
+            // For example, you can show a success message or update the UI
+            // location.reload();
+        },
+        error: function(xhr, status, error) {
+            // Handle the error response here
+            // For example, you can show an error message or handle the error gracefully
+        }
+    });
+}
