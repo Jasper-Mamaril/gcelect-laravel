@@ -9,6 +9,11 @@ use App\Models\Positions;
 
 class PartylistController extends Controller
 {
+    public function insertCandidates()
+    {
+        return view('partylist.partylists-home');
+    }
+
     public function getPartylists()
     {
         // $partylists = Partylists::with('candidates')->all();
@@ -71,15 +76,6 @@ class PartylistController extends Controller
         $partylist->save();
 
     return $partylist;
-    }
-
-    public function insertCandidates()
-    {
-        // $partylist = auth()->user();
-        // $partylist->partylist_status = 'edit';
-        // $partylist->save();
-
-        return view('partylist.partylists-home');
     }
 
     public function getPartylistDetails($id)

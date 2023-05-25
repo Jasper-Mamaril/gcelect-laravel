@@ -25,7 +25,7 @@
             </div>  -->
             <div class="bg-dark rounded">
               
-              @if (auth()->user()->user_status == 'no')
+             
                 <div class="d-flex bg-success p-3 mb-1 rounded">
                   Add Your Partylist Members
                 </div>
@@ -525,61 +525,6 @@
               </div>
               </form>
                   <!-- Display content for active users -->
-              @else
-                  <div class="d-flex bg-success p-3 mb-1 rounded">
-                    Your Partylist Members
-                  </div>
-                  {{-- table only, no more edit --}}
-                  <div class="bg-dark rounded">
-                  <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
-                    <div class="col-4">
-                      <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                    </div>
-
-                      <div class="col-2">
-                        <label>Application Status:</label>
-                        <input class="form-control" id="myInput" type="text" placeholder="Approved">
-                      </div>
-
-                    <table class="table  align-middle">
-                      <thead class="text-center ">
-                        <tr>
-                          {{-- <th scope="col" class="col-1">id</th> --}}
-                          <th scope="col" class="col-2">Position</th>
-                          <th scope="col" class="col-3">Full Name</th>
-                          <th scope="col" class="col-1">Year Level</th>
-                          <th scope="col" class="col-2">Program</th>
-                          <th scope="col" class="col-1">Platform</th>
-                        </tr>
-                      </thead>
-                      <tbody class="text-center"  id="myTable">
-  
-                      @foreach ($members as $candidate)
-                      @csrf
-                        <tr>
-                          {{-- <td scope="row">{{$candidate->id}}</td> --}}
-                          <td>{{$candidate->position_name}}</td>
-                          <td scope="row">{{$candidate->candidate_fname}} {{$candidate->candidate_lname}}</td>
-                          <td>{{$candidate->candidate_yrlevel}}</td>
-                          <td>{{$candidate->candidate_program}}</td>
-                          {{-- <td><span class="text-primary text-capitalize">{{$approved->status}}</span></td> --}}
-                          <td>
-                            <div class="display-flex">
-                              <span class="btn btn-primary" role="button" 
-                              data-bs-toggle="modal" data-bs-target="#platformModal">VIEW</span>
-                              {{-- <span class="btn btn-success" role="button">Archive</span> --}}
-                            </div>
-                          </td>
-                        </tr>
-                      @endforeach
-  
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-              @endif
-
               
             </div>
           </div>
