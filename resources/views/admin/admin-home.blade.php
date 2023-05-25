@@ -56,7 +56,7 @@
                           <div class="display-flex">
                             <span class="btn btn-primary" role="button" 
                             data-bs-toggle="ajax-modal" data-bs-target="#partylistModal" >Details</span>
-                            <span class="btn btn-success" role="button">Archive</span>
+                            <span class="btn btn-danger" role="button" onclick="archive()">Archive</span>
                           </div>
                         </td>
                       </tr>

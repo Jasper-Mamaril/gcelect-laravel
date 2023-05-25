@@ -137,10 +137,10 @@ function decline() {
 
 }
 
-function deleteUser() {
+function archive() {
     Swal.fire({
-            title: 'Delete',
-            text: "Do you want to delete this user?",
+            title: 'Archive',
+            text: "Do you want to archive this partylist?",
             icon: 'warning',
             showCancelButton: true,
             width: 500,
@@ -154,8 +154,8 @@ function deleteUser() {
         .then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    title: 'Deleted!',
-                    text: "User has been deleted.",
+                    title: 'Archived!',
+                    text: "Partylist has been archived.",
                     icon: 'success',
                     width: 400,
                     heightAuto: false,
