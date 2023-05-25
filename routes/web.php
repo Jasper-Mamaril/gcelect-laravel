@@ -47,11 +47,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
 Route::group(['middleware' => ['auth']], function() {
     // users pages
     Route::get('users/user-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
-
+    // partylist modal
+    Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
     Route::get('users/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
     Route::get('users/votingList', [App\Http\Controllers\VoteController::class, 'getVotelist']);
         // vote submit
-        Route::post('/vote-form', [App\Http\Controllers\VoteController::class, 'voteForm'])->name('vote-form');
+    Route::post('/vote-form', [App\Http\Controllers\VoteController::class, 'voteForm'])->name('vote-form');
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
     // admin pages
@@ -62,11 +63,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('admin/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getAdminLeaderboards']);
     Route::get('admin/users-listing', [App\Http\Controllers\UserController::class, 'getAllVoters']);
     // Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getApproved']);
-
-    // partylist page(old)
-    Route::get('candidates/candidacy', [App\Http\Controllers\CandidateController::class, 'route']);
-    Route::post('apply/', [App\Http\Controllers\PartylistController::class, 'applyPartylist']);
-    Route::get('partylists/all', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
 
     // partylist page(new)
     Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);

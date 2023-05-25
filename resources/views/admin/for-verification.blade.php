@@ -17,7 +17,7 @@
           </div>
 
           <div class="column container-fluid active p-2 text-white">
-            <div class="d-flex bg-danger p-3 mb-1 rounded">
+            <div class="d-flex bg-primary p-3 mb-1 rounded">
               Partylists Verification
             </div>
             <!-- <div class="d-flex mb-1">

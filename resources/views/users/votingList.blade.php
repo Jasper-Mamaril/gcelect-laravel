@@ -11,13 +11,14 @@
               GCELECT
             </div>
           </div>
-
-            <div class="bg-dark rounded">
-
-              @if (auth()->user()->user_status == 'yes')
-              <div class="d-flex bg-success p-3 mb-1 rounded">
-                Your Votes List
-              </div>
+          
+          <div class="column container-fluid active p-2 text-white">
+            <div class="d-flex bg-success p-3 mb-1 rounded">
+              Your Votes List
+            </div>
+            <div class="bg-dark rounded p-3">
+            @if (auth()->user()->user_status == 'yes')
+            
               {{-- table only, no more edit --}}
               <div class="bg-dark rounded">
               <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
@@ -52,11 +53,14 @@
             </div>
 
               @else
-                <h1>You havent voted yet!</h1>
+              <div class="d-flex align-items-center justify-content-center flex-column p-3 gap-3">
+                <img src="{{asset('img/icon.png')}}" width="400px">
+                <h1>You haven't voted yet! Proceed to voting page.</h1>
+            </div>
               @endif
               
 
-              
+            </div>
             </div>
           </div>
         </main>

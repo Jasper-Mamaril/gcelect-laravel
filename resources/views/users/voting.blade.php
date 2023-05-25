@@ -6,20 +6,19 @@
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
 
         <main class="tab-content col-10 ms-auto flex-column bg-light h-auto min-vh-100">
-          <div class="container-fluid px-0 text-white shadow" >
-            <div class="d-flex p-3" style="background-color: #1A3235;">
-              GCELECT
-            </div>
-          </div>
-
-            <div class="bg-dark rounded">
-
-              @if (auth()->user()->user_status == 'no')
-              <div class="d-flex bg-success p-3 mb-1 rounded">
-                Voting
+            <div class="container-fluid px-0 text-white shadow" >
+              <div class="d-flex p-3" style="background-color: #1A3235;">
+                GCELECT
               </div>
-           
-              <form action="{{ route('vote-form') }}"  method="POST" class="p-3">
+            </div>
+            
+            <div class="column container-fluid active p-2 text-white">
+              <div class="d-flex bg-success p-3 mb-1 rounded">
+                Your Votes List
+              </div>
+              <div class="bg-dark rounded p-3">
+              @if (auth()->user()->user_status == 'no')
+              <form action="{{ route('vote-form') }}"  method="POST">
                 @csrf
 
                 <!-- President -->
@@ -290,10 +289,13 @@
               </form>
 
               @else
-                <h1>You already voted! go to voting list page.</h1>
+                <div class="d-flex align-items-center justify-content-center flex-column p-3 gap-3">
+                    <img src="{{asset('img/icon.png')}}" width="400px">
+                    <h1>You already voted! Proceed to voting list page.</h1>
+                </div>
               @endif
 
-              
+            </div>
             </div>
           </div>
         </main>

@@ -12,7 +12,7 @@ class PartylistController extends Controller
     public function getPartylists()
     {
         // $partylists = Partylists::with('candidates')->all();
-        $partylists = Partylists::all()->where('status', 'verification');
+        $partylists = Partylists::all()->where('status', 'approved');
         // $members = Members::all();
         return view('users.user-home', compact('partylists'));
 
@@ -75,13 +75,29 @@ class PartylistController extends Controller
 
     public function insertCandidates()
     {
-
         // $partylist = auth()->user();
         // $partylist->partylist_status = 'edit';
         // $partylist->save();
 
         return view('partylist.partylists-home');
     }
+
+    public function getPartylistDetails($id)
+    {
+        $partylist = Partylists::findOrFail($id);
+        $candidates = Candidates::join('partylists', 'partylists.id', '=', 'candidates.partylist_id')
+                        ->join('positions', 'positions.id', '=', 'candidates.position_id')
+                        ->where('partylists.id', $id)
+                        ->get(['candidates.*', 'positions.position_name']);
+
+        return response()->json([
+            'partylists' => $partylist,
+            'candidates' => $candidates,
+        ]);
+    }
+
+
+    
 
     public function submitForm(Request $request)
     {

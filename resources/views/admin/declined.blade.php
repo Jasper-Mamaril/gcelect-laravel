@@ -47,7 +47,7 @@
                     <tbody class="text-center"  id="myTable">
 
                     @foreach ($partylists as $declined)
-                      <tr>
+                      <tr class="partylist-card" data-partylist-id="{{$declined->id}}">
                         <td scope="row">{{$declined->id}}</td>
                         <td scope="row">{{$declined->partylist_name}}</td>
                         {{-- <td>{{$verification->email}}</td> --}}
@@ -56,10 +56,11 @@
                         <td>
                           <div class="display-flex">
                             <span class="btn btn-primary" role="button" 
-                            data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
+                            data-bs-toggle="ajax-modal" data-bs-target="#partylistModal">Details</span>
                           </div>
                         </td>
                       </tr>
+                      
                     @endforeach
 
                     </tbody>
@@ -79,37 +80,28 @@
   
   <!-- Partylist Modal -->
   <div class="modal fade" id="partylistModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog text-dark modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
+    <div class="modal-dialog text-dark modal-dialog-centered modal-dialog-scrollable" style="max-width: 800px;">
+      <div class="modal-content" >
         <div class="modal-header" style="background-color: #1A3235;">
-          <h1 class="modal-title text-light fs-5" id="staticBackdropLabel" >Partylist Members</h1>
-          <span role="button" class='bx bxs-x-circle text-light fs-4 pe-auto' data-bs-dismiss="modal" aria-label="Close"></span>
+          <h1 class="modal-title text-light fs-5" id="partylistName"></h1>
+          <span role="button" class="bx bxs-x-circle text-light fs-4 pe-auto" data-bs-dismiss="modal" aria-label="Close"></span>
         </div>
         <div class="modal-body">
-            <table class="table table-dark table-striped rounded">
-                  <tbody>
-                    <thead>
-                      <th scope="row">Name</th>
-                      <th>Position</th>
-                      <th>Program</th>
-                      <th>Year Level</th>
-                      <th>Platform</th> 
-                    </thead>
-                   
-                    @foreach ($candidates as $candidate)
-
-                    <tr class="table-active">
-                        <th scope="row">{{$candidate->candidate_fname}} {{$candidate->candidate_lname}}</th>
-                        <td>{{$candidate->position_name}}</td>
-                        <td>{{$candidate->candidate_program}}</td>
-                        <td>{{$candidate->candidate_yrlevel}}</td>
-                        <td>{{$candidate->candidate_platform}}</td>
-                    </tr>
-  
-                    @endforeach
-
-                  </tbody>
-            </table>
+          <table class="table table-dark table-striped rounded" id="candidateTable">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Position</th>
+                <th scope="col">Name</th>
+                <th scope="col">Year Level</th>
+                <th scope="col">Program</th>
+                <th scope="col">Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic content will be added here -->
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer" style="background-color: #1A3235;">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
@@ -117,6 +109,7 @@
       </div>
     </div>
   </div>
+
   
 @endauth
 @endsection
