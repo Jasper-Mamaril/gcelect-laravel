@@ -45,8 +45,9 @@ Route::group(['middleware' => ['auth']], function() {
     // users pages
     Route::get('users/user-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
     Route::get('users/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
+    Route::get('users/voting', [App\Http\Controllers\VoteController::class, 'getVotelist']);
         // vote submit
-        Route::post('/submit-form', [App\Http\Controllers\VoteController::class, 'submitForm'])->name('submit-form');
+        Route::post('/vote-form', [App\Http\Controllers\VoteController::class, 'voteForm'])->name('vote-form');
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
     // admin pages
@@ -65,6 +66,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     // partylist page(new)
     Route::get('partylist/partylists-home', [App\Http\Controllers\PartylistController::class, 'insertCandidates']);
+    Route::get('partylist/partylists-home', [App\Http\Controllers\CandidateController::class, 'getPartylistCandidates']);
     Route::post('/submit-form', [App\Http\Controllers\PartylistController::class, 'submitForm'])->name('submit-form');
 });
 

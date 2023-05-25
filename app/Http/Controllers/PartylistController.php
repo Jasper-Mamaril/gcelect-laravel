@@ -210,6 +210,10 @@ class PartylistController extends Controller
         $user->user_status = 'edit';
         $user->save();
 
+        // $userId = auth()->id(); // Retrieve the user ID from the session
+        // $members = Candidates::where('partylist_id', $userId);
+        // return view('partylist.partylists-home', compact('members'));
+
         return view('partylist.partylists-home');
     }
 

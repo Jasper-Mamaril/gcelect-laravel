@@ -16,9 +16,9 @@
           </div>
 
           <div class="column container-fluid p-2 text-white">
-            <div class="d-flex bg-success p-3 mb-1 rounded">
+            {{-- <div class="d-flex bg-success p-3 mb-1 rounded">
               Voting
-            </div>
+            </div> --}}
             <!-- <div class="d-flex">
               <div class="col-5 bg-danger p-3 rounded-start"></div>
               <div class="col-7 bg-warning p-3 rounded-end"></div>
@@ -26,8 +26,11 @@
             <div class="bg-dark rounded">
 
               @if (auth()->user()->user_status == 'no')
+              <div class="d-flex bg-success p-3 mb-1 rounded">
+                Voting
+              </div>
            
-              <form action="{{ route('submit-form') }}"  method="POST" class="p-3">
+              <form action="{{ route('vote-form') }}"  method="POST" class="p-3">
                 @csrf
 
                 <!-- President -->
@@ -299,7 +302,52 @@
               </form>
 
               @else
-                  <h1>Your account is pending approval.</h1>
+              <div class="d-flex bg-success p-3 mb-1 rounded">
+                Your Votes List
+              </div>
+              {{-- table only, no more edit --}}
+              <div class="bg-dark rounded">
+              <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
+                <div class="col-4">
+                  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                </div>
+
+                <table class="table  align-middle">
+                  <thead class="text-center ">
+                    <tr>
+                      {{-- <th scope="col" class="col-1">id</th> --}}
+                      <th scope="col" class="col-2">Position</th>
+                      <th scope="col" class="col-3">Full Name</th>
+                      <th scope="col" class="col-1">Year Level</th>
+                      <th scope="col" class="col-2">Program</th>
+                      {{-- <th scope="col" class="col-1">Platform</th> --}}
+                    </tr>
+                  </thead>
+                  <tbody class="text-center"  id="myTable">
+
+                  @foreach ($votes as $votelist)
+                  @csrf
+                    <tr>
+                      {{-- <td scope="row">{{$candidate->id}}</td> --}}
+                      <td>{{$votelist->position_name}}</td>
+                      <td scope="row">{{$votelist->candidate_fname}} {{$votelist->candidate_lname}}</td>
+                      <td>{{$votelist->candidate_yrlevel}}</td>
+                      <td>{{$votelist->candidate_program}}</td>
+                      {{-- <td><span class="text-primary text-capitalize">{{$approved->status}}</span></td> --}}
+                      {{-- <td>
+                        <div class="display-flex">
+                          <span class="btn btn-primary" role="button" 
+                          data-bs-toggle="modal" data-bs-target="#platformModal">VIEW</span>
+                          <span class="btn btn-success" role="button">Archive</span>
+                        </div>
+                      </td> --}}
+                    </tr>
+                  @endforeach
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
               @endif
               
 

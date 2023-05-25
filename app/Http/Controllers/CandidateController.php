@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Candidates;
 use App\Models\Partylists;
@@ -63,6 +63,20 @@ class CandidateController extends Controller
         //     $query->where('status', 'approved');}])->get();
         return view('admin.admin-home', compact('candidates'));
 
+    }
+
+    public function getPartylistCandidates()
+    {
+        $userFname = auth()->user()->user_fname; // Retrieve the user_fname from the session
+
+        $members = DB::table('candidates')
+            ->join('positions', 'candidates.position_id', '=', 'positions.id')
+            ->join('partylists', 'candidates.partylist_id', '=', 'partylists.id')
+            ->where('partylists.partylist_name', $userFname)
+            ->select('candidates.*', 'partylists.partylist_name', 'positions.position_name')
+            ->get();
+
+        return view('partylist.partylists-home', compact('members'));
     }
 
     /**

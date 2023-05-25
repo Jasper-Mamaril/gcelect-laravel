@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {   
-    public function submitForm(Request $request)
+    public function voteForm(Request $request)
     {   
         $userId = auth()->id(); // Retrieve the user ID from the session
         // Retrieve the submitted form data
@@ -92,6 +92,18 @@ class VoteController extends Controller
         return view('user/voting', compact('userStatus'));
     }
 
+    public function getVotelist()
+    {
+        $userId = auth()->id(); // Retrieve the user ID from the session
+    
+        $votes = Votes::where('user_id', $userId)
+            ->join('candidates', 'votes.candidate_id', '=', 'candidates.id')
+            ->join('positions', 'candidates.position_id', '=', 'positions.id')
+            ->select('votes.*', 'candidates.*', 'positions.position_name')
+            ->get();
+    
+        return view('users.voting', compact('votes'));
+    }
     // public function getVotelist()
     // {
     //     $user = auth()->user();
