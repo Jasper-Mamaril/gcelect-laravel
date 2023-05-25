@@ -101,7 +101,7 @@
                 {{-- <img src="./img/signup.png" class="image imgLogo2" alt="" /> --}}
                 <!-- REGISTER FORM for candidate -->
                     <div class="image imgLogo2">
-                        <h1>Register for a Partylist Account Here!</h1>
+                        <h1 style="color:white">Register for a Partylist Account Here!</h1>
 
                         <form action="{{route('registerPartylist.perform')}}" method="POST" class="sign-up-form">
                             @csrf

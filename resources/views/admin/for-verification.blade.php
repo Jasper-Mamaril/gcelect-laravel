@@ -58,6 +58,7 @@
                             <span class="btn btn-primary" role="button" 
                             data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
                             <span class="btn btn-success" role="button" onclick="approve()">Approve</span>
+                            <span class="btn btn-danger" role="button" onclick="approve()">Decline</span>
                           </div>
                         </td>
                       </tr>
