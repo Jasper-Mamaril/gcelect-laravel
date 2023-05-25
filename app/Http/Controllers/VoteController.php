@@ -11,9 +11,6 @@ class VoteController extends Controller
     {   
         $userId = auth()->id(); // Retrieve the user ID from the session
         // Retrieve the submitted form data
-        // $president = new Votes;
-        // $president = $request->input('president');
-        // $president->save();
 
         $vote = new Votes;
         $vote->candidate_id=$request->input('president');
@@ -89,7 +86,7 @@ class VoteController extends Controller
         $user->user_status = 'yes';
         $user->save();
     
-        return view('user/voting', compact('userStatus'));
+        return view('user.votingList', compact('userStatus'));
     }
 
     public function getVotelist()
@@ -102,7 +99,7 @@ class VoteController extends Controller
             ->select('votes.*', 'candidates.*', 'positions.position_name')
             ->get();
     
-        return view('users.voting', compact('votes'));
+        return view('users.votingList', compact('votes'));
     }
     // public function getVotelist()
     // {
@@ -140,52 +137,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $vote = new Vote;
-        $vote->candidate_id=$request->president;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->vpInternal;
-        $vote->save();
-       
-        $vote = new Vote;
-        $vote->candidate_id=$request->vpExternal;
-        $vote->save();
-     
-        $vote = new Vote;
-        $vote->candidate_id=$request->secretary;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->treasurer;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->pio;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->business_manager;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->bsit;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->bscs;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->bsemc;
-        $vote->save();
-
-        $vote = new Vote;
-        $vote->candidate_id=$request->act;
-        $vote->save();
-        dd($vote);
-        return view('candidates.voting');
+        // 
     }
 
     /**

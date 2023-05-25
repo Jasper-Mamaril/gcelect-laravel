@@ -8,6 +8,7 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,13 +40,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/register', 'RegisterController@register')->name('register.perform');
     Route::post('/registerPartylist', 'RegisterController@registerPartylist')->name('registerPartylist.perform');
 
+    // Route::get('users/voting', 'CandidateController@getCandidates')->name('user.voting');
+    // Route::get('users/voting', 'VoteController@getVotelist')->name('user.voting');
 });
 
 Route::group(['middleware' => ['auth']], function() {
     // users pages
     Route::get('users/user-home', [App\Http\Controllers\PartylistController::class, 'getPartylists']);
+
     Route::get('users/voting', [App\Http\Controllers\CandidateController::class, 'getCandidates']);
-    Route::get('users/voting', [App\Http\Controllers\VoteController::class, 'getVotelist']);
+    Route::get('users/votingList', [App\Http\Controllers\VoteController::class, 'getVotelist']);
         // vote submit
         Route::post('/vote-form', [App\Http\Controllers\VoteController::class, 'voteForm'])->name('vote-form');
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);

@@ -47,6 +47,8 @@ class CandidateController extends Controller
             $query->where('status', 'approved');}])->where('position_id', 12)->get();
             
         return view('users.voting', compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
+        // return redirect()->route('users.votingList')->with(compact('presidents','vpInternals','vpExternals','secretaries','treasurers','auditors','pios','bms','bsits','bscss','bsemcs','acts'));
+
     }
 
     public function route()

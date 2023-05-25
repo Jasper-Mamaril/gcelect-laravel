@@ -30,6 +30,12 @@
             </a>
         </li>
         <li class="nav-item" role="presentation">
+          <a class="nav-link text-white"  href="/users/votingList">
+              <i class='bx bx-upvote icon' ></i>    
+              <span>Vote List</span>
+          </a>
+      </li>
+        <li class="nav-item" role="presentation">
             <a class="nav-link text-white" href="/users/leaderboards">
                 <i class='bx bx-bar-chart-square icon' ></i>
                 <span>Leaderboards</span>

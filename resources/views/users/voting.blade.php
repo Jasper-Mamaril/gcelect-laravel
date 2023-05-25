@@ -6,23 +6,12 @@
   <div class="container-fluid bg-light p-0 m-0 d-flex flex-wrap ">
 
         <main class="tab-content col-10 ms-auto flex-column bg-light h-auto min-vh-100">
-          <!-- <div class="container-fluid text-white">
-            afasfsdf
-          </div> -->
           <div class="container-fluid px-0 text-white shadow" >
             <div class="d-flex p-3" style="background-color: #1A3235;">
               GCELECT
             </div>
           </div>
 
-          <div class="column container-fluid p-2 text-white">
-            {{-- <div class="d-flex bg-success p-3 mb-1 rounded">
-              Voting
-            </div> --}}
-            <!-- <div class="d-flex">
-              <div class="col-5 bg-danger p-3 rounded-start"></div>
-              <div class="col-7 bg-warning p-3 rounded-end"></div>
-            </div>  -->
             <div class="bg-dark rounded">
 
               @if (auth()->user()->user_status == 'no')
@@ -37,14 +26,13 @@
                 <div class="bg-light m-1 rounded p-2 text-dark">
                   <div class="col p-2">President: (Content goes here)</div>
                   <div class="d-flex flex-wrap p-2 gap-4">
-                    {{-- <input class="form-check-input" type="radio" name="user" id="iduserID" value="{{$president->id}}" required> --}}
+          
 
                     @foreach ($presidents as $president)
-                   
+                      @csrf
                       <div class="column">
                         <input class="form-check-input" type="radio" name="president" id="idPresident" value="{{$president->id}}" required>
                         <label class="form-check-label" for="idPresident">
-                          {{-- Name of Candidate  --}}
                           {{$president->candidate_fname}} {{$president->candidate_lname}} - "{{$president->partylist->partylist_name}} Partylist"
                         </label>
                       </div>
@@ -60,7 +48,7 @@
                   <div class="p-2">
             
                     @foreach ($vpInternals as $vpInternal)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="vpInternal" id="idvpInternal" value="{{$vpInternal->id}}" required>
                       <label class="form-check-label" for="idvpInternal" >
@@ -80,7 +68,7 @@
                   <div class="p-2">
             
                     @foreach ($vpExternals as $vpExternal)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="vpExternal" id="idvpExternal"  value="{{$vpExternal->id}}" required>
                       <label class="form-check-label" for="idvpExternal" >
@@ -100,7 +88,7 @@
                   <div class="p-2">
             
                     @foreach ($secretaries as $secretary)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="secretary" id="idSecretary" value="{{$secretary->id}}" required>
                       <label class="form-check-label" for="idSecretary" >
@@ -120,7 +108,7 @@
                   <div class="p-2">
             
                     @foreach ($treasurers as $treasurer)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="treasurer" id="idTreasurer" value="{{$treasurer->id}}" required>
                       <label class="form-check-label" for="idTreasurer" >
@@ -140,7 +128,7 @@
                   <div class="p-2">
             
                     @foreach ($auditors as $auditor)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="auditor" id="idAuditor" value="{{$auditor->id}}" value="{{$auditor->id}}" required>
                       <label class="form-check-label" for="idAuditor" >
@@ -160,7 +148,7 @@
                   <div class="p-2">
             
                     @foreach ($pios as $pio)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="pio" id="idPio" value="{{$pio->id}}" required>
                       <label class="form-check-label" for="idPio" >
@@ -180,7 +168,7 @@
                   <div class="p-2">
             
                     @foreach ($bms as $bm)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="business_manager" id="idBusinessManager" value="{{$bm->id}}" required>
                       <label class="form-check-label" for="idBusinessManager" >
@@ -200,7 +188,7 @@
                   <div class="p-2">
             
                     @foreach ($bsits as $bsit)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="bsit" id="idBsit" value="{{$bsit->id}}" required>
                       <label class="form-check-label" for="idBsit" >
@@ -220,7 +208,7 @@
                   <div class="p-2">
             
                     @foreach ($bscss as $bscs)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="bscs" id="idBscs" value="{{$bscs->id}}" required>
                       <label class="form-check-label" for="idBscs" >
@@ -240,7 +228,7 @@
                   <div class="p-2">
             
                     @foreach ($bsemcs as $bsemc)
-            
+                    @csrf
                     <div class="column">
                       <input class="form-check-input" type="radio" name="bsemc" id="idBsemc" value="{{$bsemc->id}}" required>
                       <label class="form-check-label" for="idBsemc" >
@@ -260,7 +248,7 @@
                     <div class="p-2">
               
                       @foreach ($acts as $act)
-              
+                      @csrf
                       <div class="column">
                         <input class="form-check-input" type="radio" name="act" id="idAct" value="{{$act->id}}" required>
                         <label class="form-check-label" for="idAct" >
@@ -302,54 +290,8 @@
               </form>
 
               @else
-              <div class="d-flex bg-success p-3 mb-1 rounded">
-                Your Votes List
-              </div>
-              {{-- table only, no more edit --}}
-              <div class="bg-dark rounded">
-              <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
-                <div class="col-4">
-                  <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                </div>
-
-                <table class="table  align-middle">
-                  <thead class="text-center ">
-                    <tr>
-                      {{-- <th scope="col" class="col-1">id</th> --}}
-                      <th scope="col" class="col-2">Position</th>
-                      <th scope="col" class="col-3">Full Name</th>
-                      <th scope="col" class="col-1">Year Level</th>
-                      <th scope="col" class="col-2">Program</th>
-                      {{-- <th scope="col" class="col-1">Platform</th> --}}
-                    </tr>
-                  </thead>
-                  <tbody class="text-center"  id="myTable">
-
-                  @foreach ($votes as $votelist)
-                  @csrf
-                    <tr>
-                      {{-- <td scope="row">{{$candidate->id}}</td> --}}
-                      <td>{{$votelist->position_name}}</td>
-                      <td scope="row">{{$votelist->candidate_fname}} {{$votelist->candidate_lname}}</td>
-                      <td>{{$votelist->candidate_yrlevel}}</td>
-                      <td>{{$votelist->candidate_program}}</td>
-                      {{-- <td><span class="text-primary text-capitalize">{{$approved->status}}</span></td> --}}
-                      {{-- <td>
-                        <div class="display-flex">
-                          <span class="btn btn-primary" role="button" 
-                          data-bs-toggle="modal" data-bs-target="#platformModal">VIEW</span>
-                          <span class="btn btn-success" role="button">Archive</span>
-                        </div>
-                      </td> --}}
-                    </tr>
-                  @endforeach
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                <h1>You already voted! go to voting list page.</h1>
               @endif
-              
 
               
             </div>
