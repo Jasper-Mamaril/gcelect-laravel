@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth']], function() {
     // uses AJAX --MUST BE AT THE BOTTOM
     Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
     Route::post('/partylists/archive', [App\Http\Controllers\PartylistController::class, 'decline']);
+    Route::patch('partylists/verify', [App\Http\Controllers\PartylistController::class, 'verify']);
 
 });
 

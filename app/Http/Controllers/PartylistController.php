@@ -101,21 +101,16 @@ class PartylistController extends Controller
         // Find the partylist by ID
         $partylist = Partylists::find($request->partylistID);
 
-        if ($partylist) {
-
             $partylist->status = 'declined';
             $partylist->save();
 
             return back()->with('success', 'Partylist archived successfully');
-        } else {
-            return back()->with('error', 'Partylist not found');
-        }
     }
 
     public function approve(Request $request)
     {
         // Find the partylist by ID
-        $partylist = Partylists::find($request->approveID);
+        $partylist = Partylists::find($request->partylist3ID);
 
         if ($partylist) {
 
@@ -131,17 +126,15 @@ class PartylistController extends Controller
     public function verify(Request $request)
     {
         // Find the partylist by ID
-        $partylist = Partylists::find($request->verifyID);
+        $partylist = Partylists::find($request->partylist2ID);
     
-        if ($partylist) {
+   
             // Update the partylist status to 'verification'
             $partylist->status = 'verification';
             $partylist->save();
     
-            return back()->with('success', 'Partylist verified successfully');
-        } else {
-            return back()->with('error', 'Partylist not found');
-        }
+            // return back()->with('success', 'Partylist verified successfully');
+        
     }
     
 

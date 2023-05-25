@@ -54,6 +54,14 @@
                         <td><span class="text-primary text-capitalize">{{$approved->status}}</span></td>
                         <td>
                           <div class="display-flex">
+
+                            <form action="/partylists/verify" method="POST">
+                              @csrf
+                              @method('patch')
+                              <button class="btn btn-danger" type="submit">For Verification</button>
+                              <input hidden value="{{$approved->id}}" name="partylist2ID">
+                            </form>
+
                             <span class="btn btn-primary" role="button" 
                               data-bs-toggle="ajax-modal" data-bs-target="#partylistModal">Details</span>
                             <form action="/partylists/archive" method="POST">
