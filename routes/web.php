@@ -40,6 +40,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/register', 'RegisterController@register')->name('register.perform');
     Route::post('/registerPartylist', 'RegisterController@registerPartylist')->name('registerPartylist.perform');
 
+    Route::patch('/update/status/{approved}', 'PartylistController@updateStatus')->name('change.status');
     // Route::get('users/voting', 'CandidateController@getCandidates')->name('user.voting');
     // Route::get('users/voting', 'VoteController@getVotelist')->name('user.voting');
 });
@@ -56,7 +57,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('users/leaderboards', [App\Http\Controllers\LeaderboardController::class, 'getLeaderboards']);
 
     // admin pages
-    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved'])->name('admin.admin-home');
+    Route::get('admin/admin-home', [App\Http\Controllers\PartylistController::class, 'getApproved']);
+
+
     // Route::get('admin/admin-home', [App\Http\Controllers\CandidateController::class, 'getPartylistDetails']);
     Route::get('admin/for-verification', [App\Http\Controllers\PartylistController::class, 'getforVerification']);
     Route::get('admin/declined', [App\Http\Controllers\PartylistController::class, 'getDeclined']);

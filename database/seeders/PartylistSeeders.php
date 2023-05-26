@@ -17,28 +17,14 @@ class PartylistSeeders extends Seeder
         DB::table('partylists')->insert([
             [
                 'partylist_name' => 'Kapuso',
-                'status' => 'approved'
+                'status' => 'approved',
+                'created_at' => '2023-05-25 04:12:54'
             ],
             [
                 'partylist_name' => 'Kapamilya',
-                'status' => 'approved'
-            ],
-            [
-                'partylist_name' => 'Kapatid',
-                'status' => 'verification'
-            ],
-            [
-                'partylist_name' => 'Kapitbahay',
-                'status' => 'verification'
-            ],
-            [
-                'partylist_name' => 'Kuya',
-                'status' => 'declined'
-            ],
-            [
-                'partylist_name' => 'Ate',
-                'status' => 'declined'
-            ],
+                'status' => 'approved',
+                'created_at' => '2023-05-25 04:12:54'
+            ]
 
         ]);
     }

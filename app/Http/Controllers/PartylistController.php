@@ -21,12 +21,25 @@ class PartylistController extends Controller
     public function getApproved()
     {
         // $partylists = Partylists::with('candidates')->all();
-        $partylists = Partylists::all()->where('status', 'approved');
-        $candidates = Candidates::all()->where('partylist_id', 1);
+        $partylists = Partylists::all();
+        // $candidates = Candidates::all()->where('partylist_id', 1);
         // $members = Members::all();
         
-        return view('admin.admin-home', compact('partylists','candidates'));
+        return view('admin.admin-home', compact('partylists'));
 
+    }
+
+    public function updateStatus(Request $request, $approved)
+    {
+        $partylist = Partylists::find($approved);
+        if (!$partylist) {
+            return back()->with('error', 'Partylist not found');
+        }
+    
+        $partylist->status = $request->input('status');
+        $partylist->save();
+    
+        return back()->with('success', 'Partylist status updated successfully');
     }
 
     // public function getApproved($id)
