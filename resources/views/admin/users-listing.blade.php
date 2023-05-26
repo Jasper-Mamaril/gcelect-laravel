@@ -17,7 +17,7 @@
           </div>
 
           <div class="column container-fluid active p-2 text-white">
-            <div class="d-flex bg-danger p-3 mb-1 rounded">
+            <div class="d-flex bg-success p-3 mb-1 rounded">
               Users Listing
             </div>
             <div class="container-fluid mb-1 p-0" >
@@ -26,8 +26,13 @@
                 {{-- @foreach ($partylists as $partylist) --}}
 
                 <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
-                  <div class="col-4">
-                  <input class="form-control" id="myInput" type="text" placeholder="Search..">   
+                  <div class="d-flex justify-content-between ">
+                    <div class="col-4">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">   
+                    </div>
+                    <div>
+                      <button class="btn btn-danger" onclick="resetAll()">Reset Votes</button>
+                    </div>
                   </div>
 
                   {{-- <div>

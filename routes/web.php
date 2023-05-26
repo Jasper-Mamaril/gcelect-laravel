@@ -77,9 +77,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
     Route::post('/partylists/archive', [App\Http\Controllers\PartylistController::class, 'decline']);
 
+    
    
 });
-
+Route::post('/resetVotes', [App\Http\Controllers\VoteController::class, 'resetVotes']);
 
 
 

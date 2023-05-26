@@ -27,7 +27,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Presidents</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -38,7 +37,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>VP for External Affairs</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -49,7 +47,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>VP for Internal Affairs</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -60,7 +57,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Secretary</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
                   
@@ -71,7 +67,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Treasurer</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -82,7 +77,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Auditor</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -93,7 +87,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Public Information Officer</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -104,7 +97,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>Business Manager</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -115,7 +107,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>BSIT Representative</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -126,7 +117,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>BSCS Representative</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -137,7 +127,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>BSEMC Representative</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -148,7 +137,6 @@
                     </div>
                     <div class="p-3 rounded-bottom d-flex justify-content-between align-items-center" style="background-color: gray;">
                         <div><h5>ACT Representative</h5></div>
-                        <div> <span class="bg-dark px-4 py-1 rounded" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                     </div>
                   </div>
 
@@ -160,7 +148,7 @@
   <!-- Modals -->
 
   <!-- Candidates Modal -->
-  <div class="modal fade" id="candidatesModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  {{-- <div class="modal fade" id="candidatesModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog text-dark modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header" style="background-color: #1A3235;">
@@ -198,6 +186,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   @endauth
 @endsection

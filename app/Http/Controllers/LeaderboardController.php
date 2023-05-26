@@ -20,14 +20,6 @@ class LeaderboardController extends Controller
 
     public function getChartData(Request $request, $positionId)
     {
-        // Retrieve candidates and their vote counts for the specified positionId
-        // $candidates = Candidates::join('votes', 'candidates.id', '=', 'votes.candidate_id')
-        //     ->where('candidates.position_id', $positionId)
-        //     ->select('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname', \DB::raw('COUNT(votes.id) as votes_count'))
-        //     ->groupBy('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname')
-        //     ->orderBy('votes_count', 'desc')
-        //     ->get(); 
-
             $candidates = Candidates::join('votes', 'candidates.id', '=', 'votes.candidate_id')
                 ->where('candidates.position_id', $positionId)
                 ->select('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname')
@@ -36,7 +28,6 @@ class LeaderboardController extends Controller
                 ->orderByDesc('votes_count')
                 ->get();
 
-        // Transform the data into the format expected by the chart
         $dataPoints = [];
         foreach ($candidates as $candidate) {
             $dataPoints[] = [
@@ -46,7 +37,6 @@ class LeaderboardController extends Controller
         }
 
         return response()->json($dataPoints);
-        // return $candidates;
     }
 
 

@@ -171,6 +171,64 @@ function archive() {
 
 }
 
+function resetAll() {
+    Swal.fire({
+        title: 'Reset',
+        text: "Do you want to reset all votes?",
+        icon: 'warning',
+        showCancelButton: true,
+        width: 500,
+        heightAuto: false,
+        color: 'white',
+        confirmButtonColor: '#4BB1F7',
+        cancelButtonColor: '#F27171',
+        background: '#0e2535',
+        confirmButtonText: 'Yes'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Perform AJAX request to delete votes and update users
+            $.ajax({
+                url: '/resetVotes',
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    Swal.fire({
+                        title: 'Reset!',
+                        text: "Votes have been cleared.",
+                        icon: 'success',
+                        width: 500,
+                        heightAuto: false,
+                        color: 'white',
+                        confirmButtonColor: '#4BB1F7',
+                        cancelButtonColor: '#F27171',
+                        background: '#0e2535',
+                    })
+                    .then((result) => {
+                        // Reload the Page
+                        location.reload();
+                      });
+                },
+                error: function () {
+                    Swal.fire({
+                        title: 'Error',
+                        text: "An error occurred while resetting votes.",
+                        icon: 'error',
+                        width: 500,
+                        heightAuto: false,
+                        color: 'white',
+                        confirmButtonColor: '#4BB1F7',
+                        cancelButtonColor: '#F27171',
+                        background: '#0e2535',
+                    });
+                }
+            });
+        }
+    });
+}
+
+
 function updateUser() {
     Swal.fire({
             title: 'Update',

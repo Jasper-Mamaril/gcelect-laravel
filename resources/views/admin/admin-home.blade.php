@@ -67,7 +67,7 @@
                           
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</button>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="ajax-modal" data-bs-target="#partylistModal">Details</button>
                             </div>
                           </td>
                         </tr>

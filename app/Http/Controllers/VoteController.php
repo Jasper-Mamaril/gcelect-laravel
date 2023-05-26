@@ -83,6 +83,18 @@ class VoteController extends Controller
 
     }
 
+    public function resetVotes(Request $request)
+        {
+            // Delete all votes
+            Votes::truncate();
+
+            // Update users with user_roles = 'user' and user_status = 'no'
+            User::where('user_roles', 'user')->update(['user_status' => 'no']);
+
+            // return response()->json(['success' => true]);
+            return back()->with('success', 'success');
+        }
+
     public function updateUserStatus()
     {
         $user = auth()->user();
