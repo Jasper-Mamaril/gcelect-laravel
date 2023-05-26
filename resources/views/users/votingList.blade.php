@@ -26,29 +26,30 @@
                   <input class="form-control" id="myInput" type="text" placeholder="Search..">
                 </div>
 
-                <table class="table  align-middle">
-                  <thead class="text-center ">
+                <table class="table align-middle">
+                  <thead class="text-center">
                     <tr>
+                      <th scope="col" class="col-1">#</th>
                       <th scope="col" class="col-2">Position</th>
                       <th scope="col" class="col-3">Full Name</th>
                       <th scope="col" class="col-1">Year Level</th>
                       <th scope="col" class="col-2">Program</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center"  id="myTable">
-
-                  @foreach ($votes as $votelist)
-                  @csrf
+                  <tbody class="text-center" id="myTable">
+                    @foreach ($votes as $votelist)
                     <tr>
-                      <td>{{$votelist->position_name}}</td>
-                      <td scope="row">{{$votelist->candidate_fname}} {{$votelist->candidate_lname}}</td>
-                      <td>{{$votelist->candidate_yrlevel}}</td>
-                      <td>{{$votelist->candidate_program}}</td>
+                      <td scope="row" class="fw-bold">{{ $loop->iteration }}</td>
+                      <td>{{ $votelist->position_name }}</td>
+                      <td>{{ $votelist->candidate_fname }} {{ $votelist->candidate_lname }}</td>
+                      <td style="background-color: {{ $votelist->candidate_yrlevel === 'First-year' ? '#ff9999' : ($votelist->candidate_yrlevel === 'Second-year' ? '#99ccff' : ($votelist->candidate_yrlevel === 'Third-year' ? '#99ff99' : ($votelist->candidate_yrlevel === 'Fourth-year' ? '#ffff99' : ''))) }}; font-weight: bold;">{{ $votelist->candidate_yrlevel }}</td>
+                      <td style="color: {{ $votelist->candidate_program === 'Program1' ? '#ff0000' : ($votelist->candidate_program === 'Program2' ? '#00ff00' : ($votelist->candidate_program === 'Program3' ? '#0000ff' : '')) }}; font-weight: bold;">{{ $votelist->candidate_program }}</td>
                     </tr>
-                  @endforeach
-
+                    @endforeach
                   </tbody>
                 </table>
+                
+
               </div>
             </div>
 

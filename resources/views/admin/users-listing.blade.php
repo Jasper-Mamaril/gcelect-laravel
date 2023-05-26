@@ -30,37 +30,41 @@
                   <input class="form-control" id="myInput" type="text" placeholder="Search..">   
                   </div>
 
-                   {{-- add reset voting button here--}}
+                  {{-- <div>
+                   
+                        <button type="submit" class="btn btn-danger">Reset Votes</button>
+                        <!-- delete all votes and update all users with user_role of "user", user_status to 'no' -->
+    
+                  </div> --}}
 
-                  <table class="table align-middle">
-                    <thead class="text-center ">
+                   <table class="table align-middle">
+                    <thead class="text-center">
                       <tr>
-                        <th scope="col" class="col-2">Full Name</th>
-                        {{-- <th scope="col" class="col-2">Last Name</th> --}}
+                        <th scope="col" class="col-1">#</th>
+                        <th scope="col" class="col-1">First Name</th>
+                        <th scope="col" class="col-1">Last Name</th>
                         <th scope="col" class="col-3">Email</th>
                         <th scope="col" class="col-2">Voting Status</th>
-                        <th scope="col" class="col-3">Actions</th>
                       </tr>
                     </thead>
-                    <tbody class="text-center" id="myTable">                    
-                      @foreach ($voters as $voter)
-
+                    <tbody class="text-center" id="myTable">
+                      @foreach ($voters as $index => $voter)
                       <tr>
-                        <th scope="row">{{$voter->user_fname}} {{$voter->user_lname}}</th>
-                        {{-- <td>Mamaril</td> --}}
-                        <td>{{$voter->email}}</td>
-                        <td><span class="text-success text-capitalize">{{$voter->user_status}}</span></td>
+                        <td scope="row" class="fw-bold">{{ $loop->iteration }}</td>
+                        <td scope="row">{{ $voter->user_fname }}</td>
+                        <td>{{ $voter->user_lname }}</td>
+                        <td>{{ $voter->email }}</td>
                         <td>
-                          <div class="display-flex">
-                            <span class="btn btn-primary" role="button" 
-                            data-bs-toggle="modal" data-bs-target="#partylistModal">Details</span>
-                          </div>
+                          <span style="font-weight: {{ $voter->user_status === 'no' ? 'bold' : 'bold' }}" class="text-capitalize {{ $voter->user_status === 'no' ? 'text-danger' : 'text-success' }}">
+                            {{ $voter->user_status }}
+                          </span>
                         </td>
-                      </tr>   
+                      </tr>
                       @endforeach
-
                     </tbody>
                   </table>
+                  
+                  
                 </div>
 
                 {{-- @endforeach --}}

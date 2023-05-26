@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call([PartylistSeeders::class]); 
         $this->call([PositionSeeders::class]); 
         $this->call([CandidateSeeders::class]); 
-        $this->call([VoteSeeders::class]); 
+
     }
 }

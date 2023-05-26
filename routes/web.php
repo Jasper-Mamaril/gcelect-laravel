@@ -41,6 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/registerPartylist', 'RegisterController@registerPartylist')->name('registerPartylist.perform');
 
     Route::patch('/update/status/{approved}', 'PartylistController@updateStatus')->name('change.status');
+
      // uses AJAX for leaderboards
      Route::get('/leaderboard/{positionId}', 'LeaderboardController@getChartData')->name('chart.data');
     // Route::get('users/voting', 'CandidateController@getCandidates')->name('user.voting');

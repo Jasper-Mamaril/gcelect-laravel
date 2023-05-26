@@ -32,20 +32,21 @@
                   <div class="col-4">
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     </div>
+
                     <table class="table align-middle">
                       <thead class="text-center">
                         <tr>
-                          {{-- <th scope="col" class="col-1">ID</th> --}}
-                          <th scope="col" class="col-2">Partylist Name</th>
+                          <th scope="col" class="col-1">#</th>
+                          <th scope="col" class="col-1">Partylist Name</th>
                           <th scope="col" class="col-2">Date Submitted</th>
-                          <th scope="col" class="col-2">Status</th>
+                          <th scope="col" class="col-1">Status</th>
                           <th scope="col" class="col-1">Actions</th>
                         </tr>
                       </thead>
                       <tbody class="text-center" id="myTable">
                         @foreach ($partylists as $approved)
                         <tr class="partylist-card" data-partylist-id="{{ $approved->id }}">
-                          {{-- <td>{{ $approved->id }}</td> --}}
+                          <td scope="row" class="fw-bold">{{ $loop->iteration }}</td>
                           <td>{{ $approved->partylist_name }}</td>
                           <td>{{ $approved->created_at }}</td>
                           <td>
@@ -66,7 +67,7 @@
                           
                           <td>
                             <div class="btn-group">
-                              <button type="button" class="btn btn-primary" data-bs-toggle="ajax-modal" data-bs-target="#partylistModal" >Details</button>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#partylistModal">Details</button>
                             </div>
                           </td>
                         </tr>

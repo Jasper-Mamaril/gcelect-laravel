@@ -18,6 +18,7 @@
               </div>
               <div class="bg-dark rounded p-3">
               @if (auth()->user()->user_status == 'no')
+              
               <form action="{{ route('vote-form') }}"  method="POST">
                 @csrf
 
@@ -266,23 +267,25 @@
                 <div>
             
                 <!-- Terms and Conditions -->
-                <div class=" m-1 p-2 rounded text-light">
-                  <div class="form-check">
+                <div class="m-1 p-2 rounded d-flex flex-column align-items-center">
+                  <div class="form-check text-light">
                     <input class="form-check-input" type="checkbox" value="" id="termsConditions" required>
                     <label class="form-check-label" for="termsConditions">
-                      I Agree to <a href=""  data-bs-toggle="modal" data-bs-target="#termsAndConditionsModal">Terms and Conditions</a> 
+                      I Agree to <a href="" data-bs-toggle="modal" data-bs-target="#termsAndConditionsModal">Terms and Conditions</a>
                     </label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check text-light">
                     <input class="form-check-input" type="checkbox" value="" id="privacyPolicy" required>
                     <label class="form-check-label" for="privacyPolicy">
                       I Agree to <a href="" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>
                     </label>
                   </div>
                 </div>
+                
+                
             
                 <!-- Submit Button -->
-                <div class="col m-1">
+                <div class="col m-1 d-flex justify-content-center">
                   <button class="btn btn-success" type="submit">Submit form</button>
                 </div>
               </div>

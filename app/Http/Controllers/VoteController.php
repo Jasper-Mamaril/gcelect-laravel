@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {   
+
+
+
     public function voteForm(Request $request)
     {   
         $userId = auth()->id(); // Retrieve the user ID from the session

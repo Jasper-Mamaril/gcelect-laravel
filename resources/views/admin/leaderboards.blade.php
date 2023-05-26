@@ -33,7 +33,7 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Presidents</h5></div>
-                      <div> <span class="btn btn-outline-success" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
+          
                   </div>
                 </div>
 
@@ -44,7 +44,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>VP for External Affairs</h5></div>
-                      <div> <span class="btn btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -55,7 +54,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>VP for Internal Affairs</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -66,7 +64,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Secretary</h5></div>
-                      <div> <span class="btn btn-success" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
                 
@@ -77,7 +74,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Treasurer</h5></div>
-                      <div> <span class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -88,7 +84,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Auditor</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -99,7 +94,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Public Information Officer</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -110,7 +104,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>Business Manager</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -121,7 +114,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>BSIT Representative</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -132,7 +124,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>BSCS Representative</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -143,7 +134,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>BSEMC Representative</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 
@@ -154,7 +144,6 @@
                   </div>
                   <div class="p-3 rounded-bottom d-flex justify-content-between text-dark align-items-center bg-light">
                       <div><h5>ACT Representative</h5></div>
-                      <div> <span class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target="#candidatesModal">Details</span></div>
                   </div>
                 </div>
 

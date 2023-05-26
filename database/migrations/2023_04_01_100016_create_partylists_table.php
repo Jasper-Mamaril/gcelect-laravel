@@ -17,7 +17,7 @@ class CreatePartylistsTable extends Migration
             $table->BigIncrements('id');
             $table->string('partylist_name')->default('Independent');
             $table->LongText('partylist_logo')->default('None');
-            $table->LongText('partylist_status')->default('insert');
+    
             $table->timestamp('partylist_verfied_at')->nullable();
             $table->timestamps();
         });
