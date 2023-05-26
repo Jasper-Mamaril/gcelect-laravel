@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Candidates;
+use App\Models\Votes;
 use Illuminate\Http\Request;
 
 class LeaderboardController extends Controller
@@ -16,6 +17,38 @@ class LeaderboardController extends Controller
         // return view('users.leaderboards');
          return view('admin.leaderboards');
     }
+
+    public function getChartData(Request $request, $positionId)
+    {
+        // Retrieve candidates and their vote counts for the specified positionId
+        // $candidates = Candidates::join('votes', 'candidates.id', '=', 'votes.candidate_id')
+        //     ->where('candidates.position_id', $positionId)
+        //     ->select('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname', \DB::raw('COUNT(votes.id) as votes_count'))
+        //     ->groupBy('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname')
+        //     ->orderBy('votes_count', 'desc')
+        //     ->get(); 
+
+            $candidates = Candidates::join('votes', 'candidates.id', '=', 'votes.candidate_id')
+                ->where('candidates.position_id', $positionId)
+                ->select('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname')
+                ->selectRaw('COUNT(votes.id) as votes_count')
+                ->groupBy('candidates.id', 'candidates.candidate_fname', 'candidates.candidate_lname')
+                ->orderByDesc('votes_count')
+                ->get();
+
+        // Transform the data into the format expected by the chart
+        $dataPoints = [];
+        foreach ($candidates as $candidate) {
+            $dataPoints[] = [
+                'y' => $candidate->votes_count,
+                'label' => $candidate->candidate_fname . ' ' . $candidate->candidate_lname,
+            ];
+        }
+
+        return response()->json($dataPoints);
+        // return $candidates;
+    }
+
 
     /**
      * Display a listing of the resource.

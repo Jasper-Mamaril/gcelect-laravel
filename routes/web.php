@@ -40,6 +40,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function ()
     Route::post('/register', 'RegisterController@register')->name('register.perform');
     Route::post('/registerPartylist', 'RegisterController@registerPartylist')->name('registerPartylist.perform');
 
+    Route::patch('/update/status/{approved}', 'PartylistController@updateStatus')->name('change.status');
+     // uses AJAX for leaderboards
+     Route::get('/leaderboard/{positionId}', 'LeaderboardController@getChartData')->name('chart.data');
     // Route::get('users/voting', 'CandidateController@getCandidates')->name('user.voting');
     // Route::get('users/voting', 'VoteController@getVotelist')->name('user.voting');
 });
@@ -73,6 +76,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/partylist/{id}', [App\Http\Controllers\PartylistController::class, 'getPartylistDetails'])->name('partylist.details');
     Route::post('/partylists/archive', [App\Http\Controllers\PartylistController::class, 'decline']);
 
+   
 });
 
 

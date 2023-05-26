@@ -21,21 +21,9 @@
         <li class="nav-item" role="presentation">
             <a class="nav-link text-white" href="/admin/admin-home">
                 <i class='bx bx-list-ul icon'></i>
-                <span>Verified Partylists</span>
+                <span>Verify Partylists</span>
             </a>
         </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link text-white"  href="/admin/for-verification">
-                <i class='bx bx-upvote icon' ></i>    
-                <span>For Approval</span>
-            </a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link text-white"  href="/admin/declined">
-              <i class='bx bx-upvote icon' ></i>    
-              <span>Declined</span>
-          </a>
-      </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link text-white" href="/admin/leaderboards">
                 <i class='bx bx-bar-chart-square icon' ></i>

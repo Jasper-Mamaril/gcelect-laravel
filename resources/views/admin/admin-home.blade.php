@@ -32,43 +32,48 @@
                   <div class="col-4">
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     </div>
-                  <table class="table  align-middle">
-                    <thead class="text-center ">
-                      <tr>
-                        <th scope="col" class="col-1">id</th>
-                        <th scope="col" class="col-2">Partylist Name</th>
-                        {{-- <th scope="col" class="col-2">Email</th> --}}
-                        <th scope="col" class="col-2">Date Submitted</th>
-                        <th scope="col" class="col-1">Status</th>
-                        <th scope="col" class="col-4">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody class="text-center"  id="myTable">
-
-                      @foreach ($partylists as $approved)
-                      <tr class="partylist-card" data-partylist-id="{{$approved->id}}">
-                        <td scope="row">{{$approved->id}}</td>
-                        <td scope="row">{{$approved->partylist_name}}</td>
-                        {{-- <td>{{$verification->email}}</td> --}}
-                        <td>{{$approved->created_at}}</td>
-                        <td><span class="text-primary text-capitalize">{{$approved->status}}</span></td>
-                        <td>
-                          <div class="display-flex">
-                            <span class="btn btn-primary" role="button" 
-                              data-bs-toggle="ajax-modal" data-bs-target="#partylistModal">Details</span>
-                            <form action="/partylists/archive" method="POST">
+                    <table class="table align-middle">
+                      <thead class="text-center">
+                        <tr>
+                          {{-- <th scope="col" class="col-1">ID</th> --}}
+                          <th scope="col" class="col-2">Partylist Name</th>
+                          <th scope="col" class="col-2">Date Submitted</th>
+                          <th scope="col" class="col-2">Status</th>
+                          <th scope="col" class="col-1">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center" id="myTable">
+                        @foreach ($partylists as $approved)
+                        <tr class="partylist-card" data-partylist-id="{{ $approved->id }}">
+                          {{-- <td>{{ $approved->id }}</td> --}}
+                          <td>{{ $approved->partylist_name }}</td>
+                          <td>{{ $approved->created_at }}</td>
+                          <td>
+                            <form action="{{ route('change.status', $approved->id) }}" method="POST" class="d-flex">
                               @csrf
-                              <button class="btn btn-danger" type="submit">Archive</button>
-                              <input hidden value="{{$approved->id}}" name="partylistID">
+                              @method('PATCH')
+                              <select name="status" class="form-select me-2" aria-label="Default select example" required>
+                                <option value="approved"{{ $approved->status == 'approved' ? ' selected' : '' }}>Approve</option>
+                                <option value="declined"{{ $approved->status == 'declined' ? ' selected' : '' }}>Decline</option>
+                                <option value="verification"{{ $approved->status == 'verification' ? ' selected' : '' }}>For Verification</option>
+                              </select>
+                              <button type="submit" class="btn btn-success d-flex align-items-center">
+                                <i class="bx bxs-save"></i> <span class="ms-2">Save</span>
+                              </button>
                             </form>
-                          </div>
-                        </td>
-                      </tr>
-                    @endforeach
+                          </td>
+                          
+                          
+                          <td>
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-primary" data-bs-toggle="ajax-modal" data-bs-target="#partylistModal" >Details</button>
+                            </div>
+                          </td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
                     
-
-                    </tbody>
-                  </table>
                 </div>
 
                 {{-- @endforeach --}}
