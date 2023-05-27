@@ -42,8 +42,8 @@ class RegisterController extends Controller
     public function registerPartylist(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'firstname' => 'required',
-            'email' => 'required|email|unique:users,email', // Unique email validation for partylist registration
+            'firstname' => 'required|unique:partylists,partylist_name',
+            'email' => 'required|email', // Unique email validation for partylist registration
             'password' => 'required|min:6',
             'checkPassword' => 'required|same:password',
         ]);

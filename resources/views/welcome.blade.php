@@ -57,6 +57,9 @@
                             <i class="fas fa-envelope"></i>
                             <input type="email" placeholder="Email" name="email" required/>
                         </div>
+                        @error('email', 'register') 
+                            <span style="color: #dc3545; font-size: 14px; margin-top: 5px;">{{ $message }}</span>
+                        @enderror
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
                             <input type="password" placeholder="Password" name="password" required/>
@@ -65,9 +68,10 @@
                             <i class="fas fa-lock"></i>
                             <input type="password" placeholder="Confirm Password" name="checkPassword"/>
                         </div>
-                        @error('email', 'register') 
-                            <span style="color: #dc3545; font-size: 14px; margin-top: 5px;">{{ $message }}</span>
+                        @error('password', 'register')
+                                <span style="color: #dc3545; font-size: 14px; margin-top: 5px;">{{ $message }}</span>
                         @enderror
+                        
                         <button class="loginBtn" id="register-btn" type="submit">REGISTER</button>
                     </div>
                     <p class="social-text">Back to Login</p>
@@ -96,6 +100,9 @@
                                 <i class="fas fa-user"></i>
                                 <input type="text" placeholder="Partylist Name" name="firstname" required/>
                             </div>
+                            @error('firstname', 'registerPartylist') 
+                                <span style="color: #dc3545; font-size: 14px; margin-top: 5px;">Partylist Name has already been taken.</span>
+                            @enderror
                             <div class="input-field">
                                 <i class="fas fa-envelope"></i>
                                 <input type="email" placeholder="Email" name="email" required/>
@@ -108,9 +115,6 @@
                                 <i class="fas fa-lock"></i>
                                 <input type="password" placeholder="Confirm Password" name="checkPassword" required/>
                             </div>
-                            @error('email', 'registerPartylist') 
-                                <span style="color: #dc3545; font-size: 14px; margin-top: 5px;">{{ $message }}</span>
-                            @enderror
                             <button class="loginBtn" id="register-btn" type="submit">REGISTER</button>
                         </div>
                     </form>
