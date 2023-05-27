@@ -29,10 +29,14 @@
 
                 {{-- @foreach ($partylists as $partylist) --}}
                 <div class="col p-3 rounded column table-responsive" style="min-width: 300px; background-color: #fff;">
-                  <div class="col-4">
-                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                  <div class="d-flex justify-content-between ">
+                    <div class="col-4">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">   
                     </div>
-
+                    <div>
+                      <button class="btn btn-danger" onclick="resetAll()">System Reset</button>
+                    </div>
+                  </div>
                     <table class="table align-middle">
                       <thead class="text-center">
                         <tr>

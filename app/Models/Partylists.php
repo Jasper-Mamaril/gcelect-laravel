@@ -11,7 +11,7 @@ class Partylists extends Model
     // table
     protected $table = 'partylists';
 
-    protected $fillable = ['partylist_name'];
+    protected $fillable = ['partylist_name', 'status' ];
 
     public function candidates(){
         return $this->hasMany(Candidates::class);

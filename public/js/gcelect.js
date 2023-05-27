@@ -173,8 +173,8 @@ function archive() {
 
 function resetAll() {
     Swal.fire({
-        title: 'Reset',
-        text: "Do you want to reset all votes?",
+        title: 'Reset!',
+        text: "Do you want to reset the system?",
         icon: 'warning',
         showCancelButton: true,
         width: 500,
@@ -184,49 +184,69 @@ function resetAll() {
         cancelButtonColor: '#F27171',
         background: '#0e2535',
         confirmButtonText: 'Yes'
-    }).then((result) => {
+    })
+    .then((result) => {
         if (result.isConfirmed) {
             // Perform AJAX request to delete votes and update users
-            $.ajax({
-                url: '/resetVotes',
-                type: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function (response) {
-                    Swal.fire({
-                        title: 'Reset!',
-                        text: "Votes have been cleared.",
-                        icon: 'success',
-                        width: 500,
-                        heightAuto: false,
-                        color: 'white',
-                        confirmButtonColor: '#4BB1F7',
-                        cancelButtonColor: '#F27171',
-                        background: '#0e2535',
-                    })
-                    .then((result) => {
-                        // Reload the Page
-                        location.reload();
-                      });
-                },
-                error: function () {
-                    Swal.fire({
-                        title: 'Error',
-                        text: "An error occurred while resetting votes.",
-                        icon: 'error',
-                        width: 500,
-                        heightAuto: false,
-                        color: 'white',
-                        confirmButtonColor: '#4BB1F7',
-                        cancelButtonColor: '#F27171',
-                        background: '#0e2535',
+            Swal.fire({
+                title: 'Warning',
+                text: "This cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                width: 500,
+                heightAuto: false,
+                color: 'white',
+                confirmButtonColor: '#4BB1F7',
+                cancelButtonColor: '#F27171',
+                background: '#0e2535',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform AJAX request to delete votes and update users
+                    $.ajax({
+                        url: '/resetVotes',
+                        type: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function (response) {
+                            Swal.fire({
+                                title: 'Reset!',
+                                text: "System Reset Successful!",
+                                icon: 'success',
+                                width: 500,
+                                heightAuto: false,
+                                color: 'white',
+                                confirmButtonColor: '#4BB1F7',
+                                cancelButtonColor: '#F27171',
+                                background: '#0e2535',
+                            })
+                            .then((result) => {
+                                // Reload the Page
+                                location.reload();
+                              });
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: 'Error',
+                                text: "An error occurred while resetting votes.",
+                                icon: 'error',
+                                width: 500,
+                                heightAuto: false,
+                                color: 'white',
+                                confirmButtonColor: '#4BB1F7',
+                                cancelButtonColor: '#F27171',
+                                background: '#0e2535',
+                            });
+                        }
                     });
                 }
             });
         }
-    });
+    })
+    
 }
+
 
 
 function updateUser() {
@@ -325,3 +345,40 @@ function archivePartylist(partylistId) {
         }
     });
 }
+
+// Wait for the DOM to be ready
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the partylist registration form
+    var form = document.getElementById("partylist-registration-form");
+
+    // Add event listener for form submission
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the form data
+        var formData = new FormData(form);
+
+        // Send an AJAX request to the server
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+        .then(function(response) {
+            return response.json(); // Parse the response as JSON
+        })
+        .then(function(data) {
+            if (data.error) {
+                // If there's an error, display it on the form
+                var errorElement = document.getElementById("partylist-registration-error");
+                errorElement.textContent = data.error;
+                errorElement.style.display = "block";
+            } else {
+                // If no error, redirect to the success page
+                window.location.href = data.redirectTo;
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    });
+});

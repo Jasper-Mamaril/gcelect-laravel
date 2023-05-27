@@ -24,7 +24,7 @@
 
                 <!-- President -->
                 <div class="bg-light m-1 rounded p-2 text-dark">
-                  <div class="col p-2">President: (Content goes here)</div>
+                  <div class="col p-2">President:</div>
                   <div class="d-flex flex-wrap p-2 gap-4">
           
 
@@ -44,7 +44,7 @@
             
                 <!-- Vice President Internal -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Vice President for Internal Affairs: (Content goes here)</div>
+                  <div class="col p-2">Vice President for Internal Affairs:</div>
                   <div class="p-2">
             
                     @foreach ($vpInternals as $vpInternal)
@@ -64,7 +64,7 @@
             
                  <!-- Vice President External -->
                  <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Vice President for External Affairs: (Content goes here)</div>
+                  <div class="col p-2">Vice President for External Affairs:</div>
                   <div class="p-2">
             
                     @foreach ($vpExternals as $vpExternal)
@@ -84,7 +84,7 @@
             
                 <!-- Secretary -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Secretary: (Content goes here)</div>
+                  <div class="col p-2">Secretary:</div>
                   <div class="p-2">
             
                     @foreach ($secretaries as $secretary)
@@ -104,7 +104,7 @@
             
                 <!-- Treasurer -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Treasurer: (Content goes here)</div>
+                  <div class="col p-2">Treasurer:</div>
                   <div class="p-2">
             
                     @foreach ($treasurers as $treasurer)
@@ -124,7 +124,7 @@
             
                 <!-- Auditor -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Auditor: (Content goes here)</div>
+                  <div class="col p-2">Auditor:</div>
                   <div class="p-2">
             
                     @foreach ($auditors as $auditor)
@@ -144,7 +144,7 @@
             
                 <!-- Pio -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Public Information Officer: (Content goes here)</div>
+                  <div class="col p-2">Public Information Officer:</div>
                   <div class="p-2">
             
                     @foreach ($pios as $pio)
@@ -164,7 +164,7 @@
             
                 <!-- Business Manager -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">Business Manager: (Content goes here)</div>
+                  <div class="col p-2">Business Manager:</div>
                   <div class="p-2">
             
                     @foreach ($bms as $bm)
@@ -184,7 +184,7 @@
             
                 <!-- BSIT -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">BSIT Representative: (Content goes here)</div>
+                  <div class="col p-2">BSIT Representative:</div>
                   <div class="p-2">
             
                     @foreach ($bsits as $bsit)
@@ -204,7 +204,7 @@
             
                 <!-- BSCS -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">BSCS Representative: (Content goes here)</div>
+                  <div class="col p-2">BSCS Representative:</div>
                   <div class="p-2">
             
                     @foreach ($bscss as $bscs)
@@ -224,7 +224,7 @@
             
                 <!-- BSEMC -->
                 <div class="bg-light m-1 rounded p-2 text-dark  ">
-                  <div class="col p-2">BSEMC Representative: (Content goes here)</div>
+                  <div class="col p-2">BSEMC Representative:</div>
                   <div class="p-2">
             
                     @foreach ($bsemcs as $bsemc)
@@ -244,7 +244,7 @@
             
                   <!-- ACT -->
                   <div class="bg-light m-1 rounded p-2 text-dark  ">
-                    <div class="col p-2">ACT Representative: (Content goes here)</div>
+                    <div class="col p-2">ACT Representative:</div>
                     <div class="p-2">
               
                       @foreach ($acts as $act)

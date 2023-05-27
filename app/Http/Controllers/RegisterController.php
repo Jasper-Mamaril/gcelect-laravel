@@ -1,19 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use App\Models\Partylists;
 use Illuminate\Http\Request;
 use Hash;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    // public function show() {
-    //     return view('auth.register');
-    // }
+    public function register(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required|email|unique:users,email', // Unique email validation for registration
+            'password' => 'required|min:6',
+            'checkPassword' => 'required|same:password',
+        ]);
 
-    public function register(Request $request){
-        // dd($request);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors(), 'register')->withInput();
+        }
+
+        // Create user
         $user = User::create([
             'user_fname' => $request->firstname,
             'user_lname' => $request->lastname,
@@ -25,12 +36,23 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('success', 'Succesfully Created an Account!');
+        return redirect('/')->with('success', 'Successfully Created an Account!');
     }
 
-    // register partylist
-    public function registerPartylist(Request $request){
-        // dd($request);
+    public function registerPartylist(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'required',
+            'email' => 'required|email|unique:users,email', // Unique email validation for partylist registration
+            'password' => 'required|min:6',
+            'checkPassword' => 'required|same:password',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors(), 'registerPartylist')->withInput();
+        }
+
+        // Create user
         $user = User::create([
             'user_fname' => $request->firstname,
             'user_lname' => 'Partylist',
@@ -46,6 +68,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('success', 'Succesfully Created an Account!');
+        return redirect('/')->with('success', 'Successfully Created an Account!');
     }
 }

@@ -64,10 +64,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="presidentYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+                        <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -104,10 +104,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="internalYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -144,10 +144,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="externalYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -184,10 +184,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="secretaryYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -224,13 +224,13 @@
                       <label>Year Level</label>
                       <select class="form-select" name="treasurerYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
-                    <div class="col-4">
+                    <div class="col">
                       <label>Platform</label>
                       <textarea class="form-control" name="treasurerPlatform" placeholder="Platform" aria-label="Platform" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
@@ -263,10 +263,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="auditorYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -303,10 +303,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="pioYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -343,10 +343,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="bmYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -383,10 +383,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="bsitYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -423,10 +423,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="bscsYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -463,10 +463,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="bsemcYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">
@@ -504,10 +504,10 @@
                       <label>Year Level</label>
                       <select class="form-select" name="actYear" aria-label="Default select example" required>
                         {{-- <option selected disabled>Year Level</option> --}}
-                        <option value="1" selected>First-year</option>
-                        <option value="2">Second-year</option>
-                        <option value="3">Third-year</option>
-                        <option value="4">Fourth-year</option>
+         <option value="First-year" selected>First-year</option>
+                        <option value="Second-Year">Second-year</option>
+                        <option value="Third-year">Third-year</option>
+                        <option value="Fourth-year">Fourth-year</option>
                       </select>
                     </div>
                     <div class="col">

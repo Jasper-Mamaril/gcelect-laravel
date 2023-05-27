@@ -13,7 +13,8 @@ class LeaderboardController extends Controller
     }
 
     public function getAdminLeaderboards()
-    {
+    {   
+        
         // return view('users.leaderboards');
          return view('admin.leaderboards');
     }

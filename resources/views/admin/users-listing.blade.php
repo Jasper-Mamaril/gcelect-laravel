@@ -30,9 +30,7 @@
                     <div class="col-4">
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">   
                     </div>
-                    <div>
-                      <button class="btn btn-danger" onclick="resetAll()">Reset Votes</button>
-                    </div>
+                    
                   </div>
 
                   {{-- <div>

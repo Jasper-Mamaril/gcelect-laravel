@@ -17,7 +17,9 @@ class LoginController extends Controller
     //     return view('auth.adminlogin');
     // }
 
-    public function login(Request $request){
+    
+public function login(Request $request)
+{
     $credentials = $request->validate([
         'email' => ['required', 'email'],
         'password' => ['required']
@@ -38,14 +40,15 @@ class LoginController extends Controller
     }
 
     return back()->withErrors([
-        'email' => 'The provided credentials do not match!'
-    ])->onlyInput('email');
+        'email' => 'Incorrect Email or Password!'
+    ])->withInput($request->only('email'));
 }
+    
 
-    public function logout(){
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
-        // Artisan::call('route:clear'); // Clear route cache
         return redirect('/');
     }
 }

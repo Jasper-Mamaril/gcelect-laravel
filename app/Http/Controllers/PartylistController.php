@@ -275,7 +275,7 @@ class PartylistController extends Controller
         $candidate->save();
 
         $user = auth()->user();
-        $user->user_status = 'edit';
+        $user->user_status = 'yes';
         $user->save();
 
         // $userId = auth()->id(); // Retrieve the user ID from the session

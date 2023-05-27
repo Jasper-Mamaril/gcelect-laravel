@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Votes;
 use App\Models\User;
+use App\Models\Candidates;
+use App\Models\Partylists;
 use Illuminate\Http\Request;
 
 class VoteController extends Controller
@@ -84,16 +86,24 @@ class VoteController extends Controller
     }
 
     public function resetVotes(Request $request)
-        {
-            // Delete all votes
-            Votes::truncate();
+{
+    // Delete all votes
+    Votes::truncate();
+    User::where('user_roles', 'partylist')->delete();
 
-            // Update users with user_roles = 'user' and user_status = 'no'
-            User::where('user_roles', 'user')->update(['user_status' => 'no']);
+    // Delete candidates and their associated partylists
+    Candidates::with('partylist')->delete();
 
-            // return response()->json(['success' => true]);
-            return back()->with('success', 'success');
-        }
+    // Delete partylists
+    Partylists::with('candidates')->delete();
+
+    // Update users with user_roles = 'user' and user_status = 'no'
+    User::where('user_roles', 'user')->update(['user_status' => 'no']);
+
+    return back()->with('success', 'success');
+}
+
+
 
     public function updateUserStatus()
     {
